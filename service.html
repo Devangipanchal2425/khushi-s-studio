@@ -66,24 +66,24 @@
                 </div>
 
                 <!-- Service Category Tabs / Filters -->
-                        <div class="flex flex-wrap gap-3 mb-8">
-                            <button onclick="switchTab('bridal-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-pink-500 text-white border-pink-500">
-                                👑 BRIDAL & PRE-FUNCTION
-                            </button>
-                            
-                            <button onclick="switchTab('korean-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
-                                💆‍♀️ KOREAN HAIR SPA THERAPY
-                            </button>
-                            
-                            <button onclick="switchTab('pre-bridal-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
-                                🌸 PRE-BRIDAL SPA
-                            </button>
-                            
-                            <button onclick="switchTab('salon-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
-                                💄 SALON MENU (HAIR, SKIN, NAILS)
-                            </button>
-                        </div>
-                <!-- Service Cards Grid -->
+<!-- CATEGORY TABS -->
+                                <div class="flex flex-wrap gap-3 mb-8">
+                                    <button onclick="switchTab('bridal-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-pink-500 text-white border-pink-500">
+                                        👑 BRIDAL & PRE-FUNCTION
+                                    </button>
+                                    
+                                    <button onclick="switchTab('korean-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
+                                        💆‍♀️ KOREAN HAIR SPA THERAPY
+                                    </button>
+                                    
+                                    <button onclick="switchTab('pre-bridal-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
+                                        🌸 PRE-BRIDAL SPA
+                                    </button>
+                                    
+                                    <button onclick="switchTab('salon-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
+                                        💄 SALON MENU (HAIR, SKIN, NAILS)
+                                    </button>
+                                </div>                <!-- Service Cards Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     
                     <!-- Package 1: Normal Makeup -->
@@ -349,7 +349,7 @@
                                             </div>
                 </section>
 
-<!-- PRE-BRIDAL SPA SECTION CONTENT (3rd TAB) -->
+<!-- TAB 3: PRE-BRIDAL SPA (Initially Hidden) -->
 <div id="pre-bridal-tab" class="tab-content hidden">
     <div class="mb-6">
         <h2 class="text-2xl font-bold uppercase text-gray-900">PRE-BRIDAL SPA PACKAGES</h2>
@@ -424,10 +424,7 @@
         </div>
 
     </div>
-</div>           
-
-
-        </main>
+</div>        </main>
 
         <!-- Floating WhatsApp Button -->
         <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20have%20a%20query%20regarding%20your%20services." 
@@ -440,33 +437,32 @@
 
 </body>
 
-    <script>
+<script>
   function switchTab(tabId, btnElement) {
-    // 1. Hide all tab contents
+    // 1. Saare tabs ko hide karo
     var contents = document.querySelectorAll('.tab-content');
     contents.forEach(function(content) {
       content.classList.add('hidden');
     });
 
-    // 2. Reset styling on all tab buttons
+    // 2. Sabhi buttons ke colors normal karo
     var buttons = document.querySelectorAll('.tab-btn');
     buttons.forEach(function(btn) {
       btn.classList.remove('bg-pink-500', 'text-white', 'border-pink-500');
       btn.classList.add('bg-gray-100', 'text-gray-700', 'border-gray-200');
     });
 
-    // 3. Show the selected tab content
+    // 3. Selected Tab ko show karo
     var selectedTab = document.getElementById(tabId);
     if (selectedTab) {
       selectedTab.classList.remove('hidden');
     }
 
-    // 4. Highlight the active button
+    // 4. Clicked button ko pink highlight karo
     if (btnElement) {
       btnElement.classList.remove('bg-gray-100', 'text-gray-700', 'border-gray-200');
       btnElement.classList.add('bg-pink-500', 'text-white', 'border-pink-500');
     }
   }
 </script>
-
-</html>
+            </html>
