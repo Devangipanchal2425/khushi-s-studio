@@ -463,4 +463,18 @@
     </div>
 
 </body>
+
+    <script>
+  function togglePreBridalSpa() {
+    const container = document.getElementById('pre-bridal-cards-container');
+    const icon = document.getElementById('spa-toggle-icon');
+    
+    if (container) {
+      container.classList.toggle('hidden');
+      if (icon) {
+        icon.textContent = container.classList.contains('hidden') ? '+' : '−';
+      }
+    }
+  }
+</script>
 </html>
