@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi Patel - Services & Packages</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif-heading { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-black text-gray-800 antialiased min-h-screen">
+
+    <div class="flex flex-col md:flex-row min-h-screen w-full">
+
+        <!-- ================= LEFT SIDEBAR (Dark Theme) ================= -->
+        <aside class="w-full md:w-64 bg-[#0d0d0d] border-r border-neutral-800 flex flex-col justify-between p-6 md:fixed md:h-screen z-40 shrink-0">
+            <div>
+                <!-- Pink Logo Box -->
+                <div class="bg-[#f8a8b8] text-center py-6 px-4 rounded-sm mb-8 shadow-sm">
+                    <h2 class="text-3xl font-serif-heading font-bold text-gray-900 tracking-wider">KP</h2>
+                    <p class="text-[10px] font-bold tracking-[0.25em] text-gray-900 uppercase mt-1">KHUSHI PATEL</p>
+                    <p class="text-[8px] tracking-[0.2em] text-rose-800 font-medium uppercase">BRIDAL STUDIO & SALON</p>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="flex flex-col gap-6 text-[11px] font-semibold tracking-[0.25em] uppercase pl-2">
+                    <a href="index.html" class="text-gray-400 hover:text-[#f8a8b8] transition">HOME</a>
+                    <a href="about.html" class="text-gray-400 hover:text-[#f8a8b8] transition">ABOUT</a>
+                    <a href="services.html" class="text-[#f8a8b8] font-bold">SERVICES</a>
+                    <a href="portfolio.html" class="text-gray-400 hover:text-[#f8a8b8] transition">PORTFOLIO</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-[#f8a8b8] transition">CONTACT</a>
+                </nav>
+            </div>
+
+            <!-- Bottom Information & Social Icons -->
+            <div class="pt-6 border-t border-neutral-800/80 flex flex-col gap-3 text-gray-400">
+                <div class="flex items-center gap-3">
+                    <a href="https://www.instagram.com/khushiimakeover_official" target="_blank" class="hover:text-[#f8a8b8] transition"><i class="fa-brands fa-instagram text-base"></i></a>
+                    <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="hover:text-[#f8a8b8] transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                </div>
+                <div class="text-[10px] text-gray-500 space-y-1">
+                    <p class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-[9px]"></i> South Bopal, Ahmedabad</p>
+                    <p class="text-[9px] text-gray-600 mt-2">©2026 KHUSHI MAKEOVER</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="flex-1 bg-[#fcfcfc] md:ml-64 p-6 md:p-12 min-h-screen">
+            
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Page Header -->
+                <div class="mb-8">
+                    <span class="text-[#f8a8b8] text-[10px] font-bold tracking-[0.25em] uppercase">STUDIO MENU & RATES</span>
+                    <h1 class="text-3xl md:text-5xl font-serif-heading font-extrabold text-gray-900 tracking-tight mt-1">
+                        SERVICES & PACKAGES
+                    </h1>
+                    <div class="w-16 h-1 bg-[#f8a8b8] mt-3"></div>
+                </div>
+
+                <!-- Service Category Tabs / Filters -->
+                <div class="flex flex-wrap gap-3 mb-10 text-[11px] font-bold tracking-wider uppercase">
+                    <button class="bg-[#f8a8b8] text-gray-900 px-4 py-2.5 rounded-sm shadow-sm flex items-center gap-2">
+                        👑 BRIDAL & PRE-FUNCTION
+                    </button>
+                    <button class="bg-gray-100 text-gray-600 hover:bg-gray-200 px-4 py-2.5 rounded-sm transition flex items-center gap-2">
+                        💇‍♀️ KOREAN HAIR SPA THERAPY
+                    </button>
+                    <button class="bg-gray-100 text-gray-600 hover:bg-gray-200 px-4 py-2.5 rounded-sm transition flex items-center gap-2">
+                        🌸 PRE-BRIDAL SPA
+                    </button>
+                    <button class="bg-gray-100 text-gray-600 hover:bg-gray-200 px-4 py-2.5 rounded-sm transition flex items-center gap-2">
+                        💄 SALON MENU (HAIR, SKIN, NAILS)
+                    </button>
+                </div>
+
+                <!-- Service Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Package 1: Normal Makeup -->
+                    <div class="bg-white border border-gray-100 rounded-sm p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <h3 class="font-serif-heading text-lg font-extrabold text-gray-900 uppercase tracking-wide">
+                                NORMAL MAKEUP PACKAGE
+                            </h3>
+                            <div class="text-[#e05d76] text-3xl font-extrabold font-serif-heading my-4">
+                                ₹3,500/-
+                            </div>
+                            <ul class="space-y-2.5 text-xs text-gray-600 mb-8">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Normal Makeup
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Hair Style / Curls
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Saree Draping
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Hair Pinup
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20want%20to%20book%20Normal%20Makeup%20Package." 
+                           target="_blank" 
+                           class="w-full bg-black hover:bg-gray-800 text-white text-[10px] font-bold tracking-[0.2em] py-3 text-center uppercase transition">
+                            BOOK PACKAGE
+                        </a>
+                    </div>
+
+                    <!-- Package 2: HD Makeup -->
+                    <div class="bg-white border border-gray-100 rounded-sm p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <h3 class="font-serif-heading text-lg font-extrabold text-gray-900 uppercase tracking-wide">
+                                HD MAKEUP PACKAGE
+                            </h3>
+                            <div class="text-[#e05d76] text-3xl font-extrabold font-serif-heading my-4">
+                                ₹5,500/-
+                            </div>
+                            <ul class="space-y-2.5 text-xs text-gray-600 mb-8">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> HD Makeup
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Hair Style
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Eye Lashes
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Saree Draping
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Hair Extension
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20want%20to%20book%20HD%20Makeup%20Package." 
+                           target="_blank" 
+                           class="w-full bg-black hover:bg-gray-800 text-white text-[10px] font-bold tracking-[0.2em] py-3 text-center uppercase transition">
+                            BOOK HD GLAM
+                        </a>
+                    </div>
+
+                    <!-- Package 3: Glass Makeup -->
+                    <div class="bg-white border border-gray-100 rounded-sm p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <h3 class="font-serif-heading text-lg font-extrabold text-gray-900 uppercase tracking-wide">
+                                GLASS MAKEUP PACKAGE
+                            </h3>
+                            <div class="text-[#e05d76] text-3xl font-extrabold font-serif-heading my-4">
+                                ₹7,500/-
+                            </div>
+                            <ul class="space-y-2.5 text-xs text-gray-600 mb-8">
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Glass Makeup
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Hair Style (Real Flower)
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Eye Lashes
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Eye Lenses
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Saree Draping
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="text-[#f8a8b8]">✦</span> Hair Extension
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20want%20to%20book%20Glass%20Makeup%20Package." 
+                           target="_blank" 
+                           class="w-full bg-black hover:bg-gray-800 text-white text-[10px] font-bold tracking-[0.2em] py-3 text-center uppercase transition">
+                            BOOK GLASS GLAM
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20have%20a%20query%20regarding%20your%20services." 
+           target="_blank" 
+           class="fixed bottom-6 right-6 w-12 h-12 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl transition duration-300 z-50">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+
+    </div>
+
+</body>
+</html>
