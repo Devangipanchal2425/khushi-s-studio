@@ -351,8 +351,7 @@
 <div class="w-full border-t border-gray-200 py-6">
     
     <!-- CLICKABLE HEADER -->
-    <div onclick="togglePreBridalSpa()" class="flex justify-between items-center cursor-pointer py-2 group">
-        <div>
+<div id="spa-header" class="flex justify-between items-center cursor-pointer py-2 group">        <div>
             <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 uppercase group-hover:text-pink-600 transition">
                 PRE-BRIDAL SPA PACKAGES
             </h2>
@@ -466,32 +465,24 @@
 
 </body>
 
-    <script>
-  // Function to Toggle Accordion Sections
-  function togglePreBridalSpa() {
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var header = document.getElementById('spa-header');
     var container = document.getElementById('pre-bridal-cards-container');
     var icon = document.getElementById('spa-toggle-icon');
 
-    if (!container) {
-      console.error("Error: 'pre-bridal-cards-container' ID nahi mili!");
-      return;
+    if (header && container) {
+      header.addEventListener('click', function () {
+        // Toggle hidden class
+        if (container.classList.contains('hidden')) {
+          container.classList.remove('hidden');
+          if (icon) icon.innerText = "−";
+        } else {
+          container.classList.add('hidden');
+          if (icon) icon.innerText = "+";
+        }
+      });
     }
-
-    // Toggle display property safely
-    if (window.getComputedStyle(container).display === "none" || container.classList.contains('hidden')) {
-      container.classList.remove('hidden');
-      container.style.display = "block";
-      if (icon) icon.innerText = "−";
-    } else {
-      container.classList.add('hidden');
-      container.style.display = "none";
-      if (icon) icon.innerText = "+";
-    }
-  }
-
-  // Smooth scroll for Top Category Tabs (If clicked)
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("Service page loaded successfully!");
   });
 </script>
 </html>
