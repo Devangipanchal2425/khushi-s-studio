@@ -347,89 +347,98 @@
                                             </div>
                 </section>
 
-                    <!-- PRE-BRIDAL SPA PACKAGES SECTION -->
-<section id="pre-bridal-spa-section" class="w-full max-w-7xl mx-auto px-4 py-12">
-    <!-- Header -->
-    <div class="mb-10 text-left">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 uppercase">
-            PRE-BRIDAL SPA PACKAGES
-        </h2>
-        <p class="mt-2 text-sm text-gray-500">
-            Complete head-to-toe pampering and glow treatments before your big day.
-        </p>
+<!-- PRE-BRIDAL SPA PACKAGES ACCORDION SECTION -->
+<section id="pre-bridal-spa-section" class="w-full max-w-7xl mx-auto px-4 py-6 border-b border-gray-200">
+    
+    <!-- CLICKABLE HEADER / BUTTON -->
+    <div onclick="togglePreBridalSpa()" class="flex justify-between items-center cursor-pointer py-4 group">
+        <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 uppercase group-hover:text-pink-600 transition">
+                PRE-BRIDAL SPA PACKAGES
+            </h2>
+            <p class="mt-1 text-sm text-gray-500">
+                Complete head-to-toe pampering and glow treatments before your big day.
+            </p>
+        </div>
+        
+        <!-- Toggle Icon (+ / -) -->
+        <div class="text-2xl font-bold text-pink-600 ml-4">
+            <span id="spa-toggle-icon">+</span>
+        </div>
     </div>
 
-    <!-- Cards Grid (Flex/Grid Layout Fix) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-        
-        <!-- CARD 1: BASIC PRE-BRIDAL -->
-        <div class="relative flex flex-col justify-between p-6 bg-white border border-pink-200 rounded-2xl shadow-sm hover:shadow-md transition">
-            <div>
-                <span class="text-xs font-semibold uppercase tracking-wider text-pink-500">ESSENTIAL CARE</span>
-                <h3 class="text-xl font-bold text-gray-900 mt-1">BASIC PRE-BRIDAL</h3>
-                <div class="mt-4 text-2xl font-extrabold text-pink-600">₹6,500/-</div>
-                <ul class="mt-6 space-y-3 text-xs text-gray-600">
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Threading (Eyebrow, Forehead, Upper Lips)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Normal Wax (Full Hands, Legs, Underarms)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Clean Up (2 Sessions)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Regular Manicure & Pedicure</li>
-                </ul>
+    <!-- CARDS CONTAINER (Initially Hidden using 'hidden' class) -->
+    <div id="pre-bridal-cards-container" class="hidden mt-8 transition-all duration-300">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+            
+            <!-- CARD 1: BASIC PRE-BRIDAL -->
+            <div class="relative flex flex-col justify-between p-6 bg-white border border-pink-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-pink-500">ESSENTIAL CARE</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-1">BASIC PRE-BRIDAL</h3>
+                    <div class="mt-4 text-2xl font-extrabold text-pink-600">₹6,500/-</div>
+                    <ul class="mt-6 space-y-3 text-xs text-gray-600">
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Threading (Eyebrow, Forehead, Upper Lips)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Normal Wax (Full Hands, Legs, Underarms)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Clean Up (2 Sessions)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Regular Manicure & Pedicure</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- CARD 2: CLASSIC PRE-BRIDAL (MOST POPULAR) -->
-        <div class="relative flex flex-col justify-between p-6 bg-white border-2 border-pink-400 rounded-2xl shadow-md transform lg:-translate-y-2">
-            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 bg-pink-500 text-white text-[10px] font-bold tracking-wider rounded-full uppercase">
-                MOST POPULAR
+            <!-- CARD 2: CLASSIC PRE-BRIDAL (MOST POPULAR) -->
+            <div class="relative flex flex-col justify-between p-6 bg-white border-2 border-pink-400 rounded-2xl shadow-md">
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-1 bg-pink-500 text-white text-[10px] font-bold tracking-wider rounded-full uppercase">
+                    MOST POPULAR
+                </div>
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-pink-500">ADVANCED CARE</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-1">CLASSIC PRE-BRIDAL</h3>
+                    <div class="mt-4 text-2xl font-extrabold text-pink-600">₹10,000/-</div>
+                    <ul class="mt-6 space-y-3 text-xs text-gray-600">
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Threading (Eyebrow, Forehead, Upper Lips)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Rica Wax (Full Hands, Full Legs, Underarms)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Bikini Wax (2 Sessions)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Clean Up</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Hydra Facial (2 Sessions)</li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <span class="text-xs font-semibold uppercase tracking-wider text-pink-500">ADVANCED CARE</span>
-                <h3 class="text-xl font-bold text-gray-900 mt-1">CLASSIC PRE-BRIDAL</h3>
-                <div class="mt-4 text-2xl font-extrabold text-pink-600">₹10,000/-</div>
-                <ul class="mt-6 space-y-3 text-xs text-gray-600">
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Threading (Eyebrow, Forehead, Upper Lips)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Rica Wax (Full Hands, Full Legs, Underarms)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Bikini Wax (2 Sessions)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Clean Up</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Hydra Facial (2 Sessions)</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- CARD 3: SIGNATURE PRE-BRIDAL -->
-        <div class="relative flex flex-col justify-between p-6 bg-white border border-pink-200 rounded-2xl shadow-sm hover:shadow-md transition">
-            <div>
-                <span class="text-xs font-semibold uppercase tracking-wider text-pink-500">PREMIUM RADIANCE</span>
-                <h3 class="text-xl font-bold text-gray-900 mt-1">SIGNATURE PRE-BRIDAL</h3>
-                <div class="mt-4 text-2xl font-extrabold text-pink-600">₹13,000/-</div>
-                <ul class="mt-6 space-y-3 text-xs text-gray-600">
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Threading (Eyebrow, Forehead, Upper Lips)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Rica Wax (Full Hands, Legs, Underarms)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Bikini Wax (2 Sessions)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Clean Up</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Hydra Boost</li>
-                </ul>
+            <!-- CARD 3: SIGNATURE PRE-BRIDAL -->
+            <div class="relative flex flex-col justify-between p-6 bg-white border border-pink-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-pink-500">PREMIUM RADIANCE</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-1">SIGNATURE PRE-BRIDAL</h3>
+                    <div class="mt-4 text-2xl font-extrabold text-pink-600">₹13,000/-</div>
+                    <ul class="mt-6 space-y-3 text-xs text-gray-600">
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Threading (Eyebrow, Forehead, Upper Lips)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Rica Wax (Full Hands, Legs, Underarms)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Bikini Wax (2 Sessions)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Clean Up</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Hydra Boost</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- CARD 4: KOREAN GLASS GLOW -->
-        <div class="relative flex flex-col justify-between p-6 bg-white border border-pink-200 rounded-2xl shadow-sm hover:shadow-md transition">
-            <div>
-                <span class="text-xs font-semibold uppercase tracking-wider text-pink-500">ULTIMATE LUXURY</span>
-                <h3 class="text-xl font-bold text-gray-900 mt-1">KOREAN GLASS GLOW PRE-BRIDAL</h3>
-                <div class="mt-4 text-2xl font-extrabold text-pink-600">₹19,000/-</div>
-                <ul class="mt-6 space-y-3 text-xs text-gray-600">
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Threading (Eyebrow, Forehead, Upper Lips)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Rica Wax (Full Body - 2 Sessions)</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Clean Up</li>
-                    <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Korean Glass / Glowing Facial</li>
-                </ul>
+            <!-- CARD 4: KOREAN GLASS GLOW -->
+            <div class="relative flex flex-col justify-between p-6 bg-white border border-pink-200 rounded-2xl shadow-sm hover:shadow-md transition">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-pink-500">ULTIMATE LUXURY</span>
+                    <h3 class="text-xl font-bold text-gray-900 mt-1">KOREAN GLASS GLOW PRE-BRIDAL</h3>
+                    <div class="mt-4 text-2xl font-extrabold text-pink-600">₹19,000/-</div>
+                    <ul class="mt-6 space-y-3 text-xs text-gray-600">
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Threading (Eyebrow, Forehead, Upper Lips)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Rica Wax (Full Body - 2 Sessions)</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Clean Up</li>
+                        <li class="flex items-start"><span class="text-pink-400 mr-2">✦</span> Korean Glass / Glowing Facial</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </section>
-
                                                  </div>
 
             </div>
