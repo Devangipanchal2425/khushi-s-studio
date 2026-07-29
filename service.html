@@ -65,25 +65,25 @@
                     <div class="w-16 h-1 bg-[#f8a8b8] mt-3"></div>
                 </div>
 
-                <!-- Service Category Tabs / Filters -->
-<!-- CATEGORY TABS -->
-                                <div class="flex flex-wrap gap-3 mb-8">
-                                    <button onclick="switchTab('bridal-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-pink-500 text-white border-pink-500">
-                                        👑 BRIDAL & PRE-FUNCTION
-                                    </button>
-                                    
-                                    <button onclick="switchTab('korean-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
-                                        💆‍♀️ KOREAN HAIR SPA THERAPY
-                                    </button>
-                                    
-                                    <button onclick="switchTab('pre-bridal-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
-                                        🌸 PRE-BRIDAL SPA
-                                    </button>
-                                    
-                                    <button onclick="switchTab('salon-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
-                                        💄 SALON MENU (HAIR, SKIN, NAILS)
-                                    </button>
-                                </div>                <!-- Service Cards Grid -->
+                <div class="flex flex-wrap gap-3 mb-8">
+    <button onclick="openTab('bridal-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-pink-500 text-white border-pink-500">
+        👑 BRIDAL & PRE-FUNCTION
+    </button>
+    
+    <button onclick="openTab('korean-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
+        💆‍♀️ KOREAN HAIR SPA THERAPY
+    </button>
+    
+    <button onclick="openTab('pre-bridal-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
+        🌸 PRE-BRIDAL SPA
+    </button>
+    
+    <button onclick="openTab('salon-tab', this)" class="tab-btn px-4 py-2 text-xs font-bold uppercase rounded-md transition border bg-gray-100 text-gray-700 border-gray-200 hover:bg-pink-50">
+        💄 SALON MENU (HAIR, SKIN, NAILS)
+    </button>
+</div>
+
+ <!-- Service Cards Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     
                     <!-- Package 1: Normal Makeup -->
@@ -349,8 +349,16 @@
                                             </div>
                 </section>
 
-<!-- TAB 3: PRE-BRIDAL SPA (Initially Hidden) -->
-<div id="pre-bridal-tab" class="tab-content hidden">
+                    <!-- ================= TAB 2: KOREAN HAIR SPA ================= -->
+<div id="korean-tab" class="tab-content" style="display: none;">
+    <!-- Aapke 2nd button ke cards yahan rahenge -->
+    <h2 class="text-2xl font-bold uppercase mb-4">Korean Hair Spa Therapy</h2>
+    <!-- (Korean Spa Cards Grid Code) -->
+</div>
+
+
+<!-- ================= TAB 3: PRE-BRIDAL SPA (4 CARDS) ================= -->
+<div id="pre-bridal-tab" class="tab-content" style="display: none;">
     <div class="mb-6">
         <h2 class="text-2xl font-bold uppercase text-gray-900">PRE-BRIDAL SPA PACKAGES</h2>
         <p class="text-xs text-gray-500 mt-1">Complete head-to-toe pampering and glow treatments before your big day.</p>
@@ -358,8 +366,7 @@
 
     <!-- 4 CARDS GRID -->
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-        
-        <!-- CARD 1 -->
+        <!-- Card 1: Basic Pre-Bridal (₹6,500) -->
         <div class="border border-pink-200 rounded-lg p-5 bg-white shadow-sm flex flex-col justify-between">
             <div>
                 <span class="text-[10px] font-bold tracking-wider text-pink-500 uppercase">ESSENTIAL CARE</span>
@@ -375,7 +382,7 @@
             <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20want%20to%20book%206,500%20Basic%20Pre-Bridal%20Package." target="_blank" class="w-full bg-black text-white text-center py-2 text-xs font-bold uppercase mt-6 hover:bg-pink-600 transition block">Book Package</a>
         </div>
 
-        <!-- CARD 2 -->
+        <!-- Card 2: Classic Pre-Bridal (₹10,000) -->
         <div class="border-2 border-pink-500 rounded-lg p-5 bg-white shadow-md flex flex-col justify-between relative">
             <div>
                 <span class="text-[10px] font-bold tracking-wider text-pink-500 uppercase">ADVANCED CARE</span>
@@ -391,7 +398,7 @@
             <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20want%20to%20book%2010,000%20Classic%20Pre-Bridal%20Package." target="_blank" class="w-full bg-black text-white text-center py-2 text-xs font-bold uppercase mt-6 hover:bg-pink-600 transition block">Book Package</a>
         </div>
 
-        <!-- CARD 3 -->
+        <!-- Card 3: Signature Pre-Bridal (₹13,000) -->
         <div class="border border-pink-200 rounded-lg p-5 bg-white shadow-sm flex flex-col justify-between">
             <div>
                 <span class="text-[10px] font-bold tracking-wider text-pink-500 uppercase">PREMIUM RADIANCE</span>
@@ -407,7 +414,7 @@
             <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20want%20to%20book%2013,000%20Signature%20Pre-Bridal%20Package." target="_blank" class="w-full bg-black text-white text-center py-2 text-xs font-bold uppercase mt-6 hover:bg-pink-600 transition block">Book Package</a>
         </div>
 
-        <!-- CARD 4 -->
+        <!-- Card 4: Korean Glass Glow (₹19,000) -->
         <div class="border border-pink-200 rounded-lg p-5 bg-white shadow-sm flex flex-col justify-between">
             <div>
                 <span class="text-[10px] font-bold tracking-wider text-pink-500 uppercase">ULTIMATE LUXURY</span>
@@ -422,9 +429,16 @@
             </div>
             <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20want%20to%20book%2019,000%20Korean%20Glass%20Glow%20Pre-Bridal%20Package." target="_blank" class="w-full bg-black text-white text-center py-2 text-xs font-bold uppercase mt-6 hover:bg-pink-600 transition block">Book Package</a>
         </div>
-
     </div>
-</div>        </main>
+</div>
+
+
+<!-- ================= TAB 4: SALON MENU ================= -->
+<div id="salon-tab" class="tab-content" style="display: none;">
+    <!-- Aapke 4th button ke cards yahan rahenge -->
+    <h2 class="text-2xl font-bold uppercase mb-4">Salon Menu (Hair, Skin, Nails)</h2>
+    <!-- (Salon Services Grid Code) -->
+</div>
 
         <!-- Floating WhatsApp Button -->
         <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20have%20a%20query%20regarding%20your%20services." 
@@ -435,34 +449,35 @@
 
     </div>
 
-</body>
-
-<script>
-  function switchTab(tabId, btnElement) {
-    // 1. Saare tabs ko hide karo
-    var contents = document.querySelectorAll('.tab-content');
-    contents.forEach(function(content) {
-      content.classList.add('hidden');
+    <script>
+  function openTab(tabId, clickedBtn) {
+    // 1. Sabhi tabs ko hide kar do
+    var allTabs = document.querySelectorAll('.tab-content');
+    allTabs.forEach(function(tab) {
+      tab.style.display = 'none';
     });
 
-    // 2. Sabhi buttons ke colors normal karo
-    var buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(function(btn) {
+    // 2. Sabhi buttons ka highlight styling hata do
+    var allButtons = document.querySelectorAll('.tab-btn');
+    allButtons.forEach(function(btn) {
       btn.classList.remove('bg-pink-500', 'text-white', 'border-pink-500');
       btn.classList.add('bg-gray-100', 'text-gray-700', 'border-gray-200');
     });
 
-    // 3. Selected Tab ko show karo
-    var selectedTab = document.getElementById(tabId);
-    if (selectedTab) {
-      selectedTab.classList.remove('hidden');
+    // 3. Jis tab ID par click hua hai sirf usko show karo
+    var activeTab = document.getElementById(tabId);
+    if (activeTab) {
+      activeTab.style.display = 'block';
     }
 
-    // 4. Clicked button ko pink highlight karo
-    if (btnElement) {
-      btnElement.classList.remove('bg-gray-100', 'text-gray-700', 'border-gray-200');
-      btnElement.classList.add('bg-pink-500', 'text-white', 'border-pink-500');
+    // 4. Clicked button ko pink active state do
+    if (clickedBtn) {
+      clickedBtn.classList.remove('bg-gray-100', 'text-gray-700', 'border-gray-200');
+      clickedBtn.classList.add('bg-pink-500', 'text-white', 'border-pink-500');
     }
   }
 </script>
-            </html>
+
+</body>
+
+</html>
