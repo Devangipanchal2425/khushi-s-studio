@@ -790,5 +790,129 @@
         }
     }
 </script>
+
+    <!-- Beauty Advisor Section Starts -->
+<section class="max-w-4xl mx-auto my-12 p-6 md:p-8 bg-gradient-to-br from-pink-50 via-white to-pink-100 rounded-3xl border border-pink-200 shadow-xl">
+    
+    <!-- Title -->
+    <div class="text-center mb-8">
+        <span class="inline-block bg-pink-100 text-pink-600 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-2">
+            💖 Khushi's Personal Beauty Advisor
+        </span>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-800">Find Your Dream Beauty Look</h2>
+        <p class="text-gray-500 text-sm mt-1">Select your occasion, skin type & budget to get a personalized recommendation!</p>
+    </div>
+
+    <!-- Step 1: Occasion -->
+    <div class="mb-6">
+        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">1. Select Occasion</label>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="occasion-options">
+            <button onclick="selectOption('occasion', 'Bridal', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">👰 Bridal</button>
+            <button onclick="selectOption('occasion', 'Sangeet / Reception', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">💃 Sangeet / Reception</button>
+            <button onclick="selectOption('occasion', 'Party / Engagement', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">✨ Party / Engagement</button>
+            <button onclick="selectOption('occasion', 'Pre-Wedding', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">📸 Pre-Wedding Shoot</button>
+        </div>
+    </div>
+
+    <!-- Step 2: Skin Type -->
+    <div class="mb-6">
+        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">2. Select Skin Type</label>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="skin-options">
+            <button onclick="selectOption('skin', 'Normal / Combination', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">😊 Normal / Combo</button>
+            <button onclick="selectOption('skin', 'Dry Skin', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">💧 Dry Skin</button>
+            <button onclick="selectOption('skin', 'Oily / Acne Prone', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">✨ Oily / Sensitive</button>
+            <button onclick="selectOption('skin', 'Mature Skin', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">🌸 Mature Skin</button>
+        </div>
+    </div>
+
+    <!-- Step 3: Budget Range -->
+    <div class="mb-8">
+        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">3. Select Budget</label>
+        <div class="grid grid-cols-3 gap-3" id="budget-options">
+            <button onclick="selectOption('budget', 'Under ₹10,000', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">🏷️ Budget Friendly</button>
+            <button onclick="selectOption('budget', '₹10,000 - ₹25,000', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">⭐ Premium</button>
+            <button onclick="selectOption('budget', 'Above ₹25,000', this)" class="advisor-btn p-3 text-sm bg-white border border-gray-200 rounded-xl hover:border-pink-400 text-gray-700 transition font-medium">👑 Luxury Royal</button>
+        </div>
+    </div>
+
+    <!-- Result Box -->
+    <div id="advisor-result" class="p-6 bg-white border-2 border-dashed border-pink-300 rounded-2xl text-center">
+        <p class="text-gray-500 text-sm">👈 Select options above to unlock your customized makeup package recommendation!</p>
+    </div>
+
+</section>
+<!-- Beauty Advisor Section Ends -->
+
+<script>
+    // Selection state storage
+    let userSelections = {
+        occasion: null,
+        skin: null,
+        budget: null
+    };
+
+    function selectOption(category, value, clickedBtn) {
+        userSelections[category] = value;
+
+        // Reset styling for sibling buttons in same category
+        const parentDiv = clickedBtn.parentElement;
+        const siblings = parentDiv.querySelectorAll('.advisor-btn');
+        siblings.forEach(btn => {
+            btn.classList.remove('bg-pink-500', 'text-white', 'border-pink-500', 'shadow-md');
+            btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+        });
+
+        // Set active styling on clicked button
+        clickedBtn.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+        clickedBtn.classList.add('bg-pink-500', 'text-white', 'border-pink-500', 'shadow-md');
+
+        // Check if all 3 options selected
+        if (userSelections.occasion && userSelections.skin && userSelections.budget) {
+            generateRecommendation();
+        }
+    }
+
+    function generateRecommendation() {
+        const resultBox = document.getElementById('advisor-result');
+        let title = "HD Glam Beauty Package";
+        let desc = "Includes HD Airbrush Foundation, Custom Hair Styling, Lash Application & Draping.";
+        let price = "Starting from ₹12,000";
+
+        // Dynamic logic based on choices
+        if (userSelections.occasion === 'Bridal') {
+            if (userSelections.budget === 'Above ₹25,000') {
+                title = "👑 Royal Signature Bridal Package";
+                desc = "Ultra-HD Waterproof Airbrush Makeup, Hydrating Skin Prep for " + userSelections.skin + ", Luxury Hair Styling, Saree/Dupatta Draping & Premium Accessories.";
+                price = "₹25,000 - ₹35,000";
+            } else {
+                title = "👰 Classic HD Bridal Package";
+                desc = "Long-lasting HD Bridal Makeup with customized prep for " + userSelections.skin + ", Hair Styling & Jewellery setting.";
+                price = "₹15,000 - ₹22,000";
+            }
+        } else if (userSelections.occasion === 'Party / Engagement') {
+            title = "✨ Celebration Party Glam";
+            desc = "Soft Glam/HD Makeup suited for " + userSelections.skin + ", Soft Curls/Bun & Lash extensions.";
+            price = "₹5,000 - ₹8,500";
+        }
+
+        // Generate Pre-filled WhatsApp message
+        const waMessage = encodeURIComponent(`Hi Khushi! I used your Beauty Advisor on website. I need a package for:\n• Occasion: ${userSelections.occasion}\n• Skin: ${userSelections.skin}\n• Recommended Package: ${title}`);
+        const waLink = `https://wa.me/919876543210?text=${waMessage}`; // Replace with your WhatsApp Number
+
+        // Render result inside card
+        resultBox.innerHTML = `
+            <div class="animate-fade-in">
+                <span class="text-xs uppercase font-bold text-pink-500 tracking-wider">Perfect Match Found!</span>
+                <h3 class="text-2xl font-serif font-bold text-gray-800 mt-1">${title}</h3>
+                <p class="text-gray-600 text-sm max-w-lg mx-auto mt-2">${desc}</p>
+                <div class="mt-4 text-xl font-bold text-pink-600">${price}</div>
+                
+                <a href="${waLink}" target="_blank" class="inline-block mt-5 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full shadow-lg transition transform hover:-translate-y-0.5">
+                    💬 Book This Look on WhatsApp
+                </a>
+            </div>
+        `;
+    }
+</script>
 </body>
 </html>
