@@ -454,13 +454,271 @@
                     </div>
                 </div>
 
-                <!-- ================= TAB 4: SALON MENU ================= -->
-                <div id="salon-tab" class="tab-content hidden">
-                    <h2 class="text-2xl font-bold uppercase mb-4">Salon Menu (Hair, Skin, Nails)</h2>
-                    <p class="text-gray-600">Salon Menu details go here...</p>
-                </div>
+<!-- ================= TAB 4: SALON MENU (HAIR, SKIN, NAILS) ================= -->
+<div id="salon-tab" class="tab-content hidden">
+    
+    <!-- Category Filter Buttons -->
+    <div class="flex justify-center space-x-2 mb-8 border-b pb-4 border-gray-100">
+        <button onclick="openSalonCategory('skin-cat', this)" class="salon-cat-btn bg-[#f8a8b8] text-gray-900 font-bold px-4 py-2 rounded-full text-xs tracking-wider uppercase transition">
+            ✨ Skin Care
+        </button>
+        <button onclick="openSalonCategory('hair-cat', this)" class="salon-cat-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-xs tracking-wider uppercase transition hover:bg-pink-50">
+            💇‍♀️ Hair Care
+        </button>
+        <button onclick="openSalonCategory('nails-cat', this)" class="salon-cat-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-xs tracking-wider uppercase transition hover:bg-pink-50">
+            💅 Nails
+        </button>
+    </div>
 
+    <!-- ================= 1. SKIN CARE CATEGORY ================= -->
+    <div id="skin-cat" class="salon-category-content block space-y-8">
+        
+        <!-- Threading & Face -->
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">THREADING</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                <div class="flex justify-between border-b pb-1"><span>Eyebrow & Forehead</span> <span class="font-bold text-[#e05d76]">₹70/-</span></div>
+                <div class="flex justify-between border-b pb-1"><span>Upper Lips</span> <span class="font-bold text-[#e05d76]">₹30/-</span></div>
+                <div class="flex justify-between border-b pb-1"><span>Full Face</span> <span class="font-bold text-[#e05d76]">₹250/-</span></div>
             </div>
+        </div>
+
+        <!-- Waxing Table -->
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">WAXING SERVICES</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left">
+                    <thead class="bg-pink-50 text-gray-800 uppercase font-bold">
+                        <tr>
+                            <th class="p-2">Service Area</th>
+                            <th class="p-2">Normal Wax</th>
+                            <th class="p-2">Liposoluble (Rica Wax)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr><td class="p-2">Eyebrow</td><td>₹120/-</td><td class="font-bold text-[#e05d76]">₹150/-</td></tr>
+                        <tr><td class="p-2">Full Face</td><td>₹220/-</td><td class="font-bold text-[#e05d76]">₹280/-</td></tr>
+                        <tr><td class="p-2">Half Arms</td><td>₹200/-</td><td class="font-bold text-[#e05d76]">₹250/-</td></tr>
+                        <tr><td class="p-2">Full Arms</td><td>₹350/-</td><td class="font-bold text-[#e05d76]">₹450/-</td></tr>
+                        <tr><td class="p-2">Half Legs</td><td>₹400/-</td><td class="font-bold text-[#e05d76]">₹450/-</td></tr>
+                        <tr><td class="p-2">Full Legs</td><td>₹400/-</td><td class="font-bold text-[#e05d76]">₹650/-</td></tr>
+                        <tr><td class="p-2">Under Arms</td><td>₹100/-</td><td class="font-bold text-[#e05d76]">₹180/-</td></tr>
+                        <tr><td class="p-2">Half Front / Back</td><td>₹300/-</td><td class="font-bold text-[#e05d76]">₹400/-</td></tr>
+                        <tr><td class="p-2">Full Back</td><td>₹300/-</td><td class="font-bold text-[#e05d76]">₹500/-</td></tr>
+                        <tr><td class="p-2">Stomach</td><td>₹250/-</td><td class="font-bold text-[#e05d76]">₹400/-</td></tr>
+                        <tr><td class="p-2">Neck</td><td>₹200/-</td><td class="font-bold text-[#e05d76]">₹300/-</td></tr>
+                        <tr><td class="p-2 font-bold">Full Body</td><td>₹2,900/-</td><td class="font-bold text-[#e05d76]">₹3,500/-</td></tr>
+                        <tr><td class="p-2">Bikini</td><td>₹400/-</td><td class="font-bold text-[#e05d76]">₹550/-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Cleanup, Facials & Masks -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">CLEANUP</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Normal to Dry Skin</span> <span class="font-bold text-[#e05d76]">₹500/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Oily to Combination Skin</span> <span class="font-bold text-[#e05d76]">₹500/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Acne Skin Cleanup</span> <span class="font-bold text-[#e05d76]">₹500/-</span></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">BASIC & ADVANCE FACIAL</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Glovite Facial (Dry Skin)</span> <span class="font-bold text-[#e05d76]">₹800/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Sensi Glow Facial (Sensitive Skin)</span> <span class="font-bold text-[#e05d76]">₹1,200/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Tan Clear (Tanned Skin)</span> <span class="font-bold text-[#e05d76]">₹1,800/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Glowing Skin (O3+)</span> <span class="font-bold text-[#e05d76]">₹2,100/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Light & Bright Facial</span> <span class="font-bold text-[#e05d76]">₹2,500/-</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Luxurious Facials & Body Care -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">LUXURIOUS FACIALS & MASKS</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Korean Glass Skin Facial</span> <span class="font-bold text-[#e05d76]">₹5,000/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Hydra Boost Skin Facial</span> <span class="font-bold text-[#e05d76]">₹5,600/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Korean Glass Face Mask</span> <span class="font-bold text-[#e05d76]">₹350/-</span></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">D-TAN & FACE PACK</h3>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Face & Neck</span> <span class="font-bold text-[#e05d76]">₹500/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Under Arms</span> <span class="font-bold text-[#e05d76]">₹300/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Back of Arms</span> <span class="font-bold text-[#e05d76]">₹350/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Full Arms</span> <span class="font-bold text-[#e05d76]">₹400/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Full Legs</span> <span class="font-bold text-[#e05d76]">₹600/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Full Front / Back</span> <span class="font-bold text-[#e05d76]">₹800/-</span></div>
+                    <div class="flex justify-between border-b pb-1 col-span-2"><span>Full Body D-Tan</span> <span class="font-bold text-[#e05d76]">₹3,200/-</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body Polishing & Massage -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">BODY POLISHING</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Full Front & Back</span> <span class="font-bold text-[#e05d76]">₹1,800/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Full Arms & Legs</span> <span class="font-bold text-[#e05d76]">₹2,100/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Glowing Skin Body Polishing</span> <span class="font-bold text-[#e05d76]">₹6,500/-</span></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">BODY OIL MASSAGE</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Head & Neck Massage</span> <span class="font-bold text-[#e05d76]">₹400/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Stomach</span> <span class="font-bold text-[#e05d76]">₹400/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Full Back</span> <span class="font-bold text-[#e05d76]">₹600/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Full Arms & Legs</span> <span class="font-bold text-[#e05d76]">₹1,100/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Full Body Massage</span> <span class="font-bold text-[#e05d76]">₹2,800/-</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= 2. HAIR CARE CATEGORY ================= -->
+    <div id="hair-cat" class="salon-category-content hidden space-y-8">
+        
+        <!-- Hair Cut & Styling -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">HAIR CUT</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Under 5 Year Cut</span> <span class="font-bold text-[#e05d76]">₹400/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Master Stylist Cut</span> <span class="font-bold text-[#e05d76]">₹700/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Advance Stylist Cut</span> <span class="font-bold text-[#e05d76]">₹1,000/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Hair Wash with Blow Dry</span> <span class="font-bold text-[#e05d76]">₹500/-</span></div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">HAIR STYLES</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Only Blow Dry</span> <span class="font-bold text-[#e05d76]">₹400/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Iron Tongs</span> <span class="font-bold text-[#e05d76]">₹800/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Ironing / Straightening</span> <span class="font-bold text-[#e05d76]">₹800/-</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- L'Oreal Hair Spa -->
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">L'OREAL PROFESSIONAL HAIR SPA</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                <div class="flex justify-between border-b pb-1"><span>Hair Up to Neck</span> <span class="font-bold text-[#e05d76]">₹600/-</span></div>
+                <div class="flex justify-between border-b pb-1"><span>Hair Up to Shoulder</span> <span class="font-bold text-[#e05d76]">₹900/-</span></div>
+                <div class="flex justify-between border-b pb-1"><span>Hair Below Shoulder</span> <span class="font-bold text-[#e05d76]">₹1,400/-</span></div>
+                <div class="flex justify-between border-b pb-1"><span>Hair Up to Waist</span> <span class="font-bold text-[#e05d76]">₹1,700/-</span></div>
+                <div class="flex justify-between border-b pb-1"><span>Hair Below Waist</span> <span class="font-bold text-[#e05d76]">₹2,100/-</span></div>
+            </div>
+        </div>
+
+        <!-- Hair Color (Majirel vs Inoa) -->
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">GLOBAL COLOR & TOUCH UP (L'OREAL)</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left">
+                    <thead class="bg-pink-50 text-gray-800 uppercase font-bold">
+                        <tr>
+                            <th class="p-2">Hair Length</th>
+                            <th class="p-2">Majirel</th>
+                            <th class="p-2">Inoa (Ammonia-Free)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr><td class="p-2">Per Streak</td><td>₹250/-</td><td class="font-bold text-[#e05d76]">₹350/-</td></tr>
+                        <tr><td class="p-2">Root Touch Up</td><td>₹550/- / ₹750/-</td><td class="font-bold text-[#e05d76]">₹650/- / ₹850/-</td></tr>
+                        <tr><td class="p-2">Global Color (Neck)</td><td>₹1,500/- / ₹1,800/-</td><td class="font-bold text-[#e05d76]">₹1,700/- / ₹2,100/-</td></tr>
+                        <tr><td class="p-2">Hair Up to Shoulder</td><td>₹3,500/-</td><td class="font-bold text-[#e05d76]">₹4,500/-</td></tr>
+                        <tr><td class="p-2">Hair Below Shoulder</td><td>₹4,500/-</td><td class="font-bold text-[#e05d76]">₹5,500/-</td></tr>
+                        <tr><td class="p-2">Hair Up to Waist</td><td>₹5,500/-</td><td class="font-bold text-[#e05d76]">₹6,500/-</td></tr>
+                        <tr><td class="p-2">Hair Below Waist</td><td>₹6,500/-</td><td class="font-bold text-[#e05d76]">₹7,000/-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Hair Treatments (Botox, Keratin, Nanoplastia, etc.) -->
+        <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">ADVANCED HAIR TREATMENTS</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left">
+                    <thead class="bg-pink-50 text-gray-800 uppercase font-bold">
+                        <tr>
+                            <th class="p-2">Treatment</th>
+                            <th class="p-2">Shoulder</th>
+                            <th class="p-2">Below Shoulder</th>
+                            <th class="p-2">Waist</th>
+                            <th class="p-2">Below Waist</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr><td class="p-2 font-bold">Hair Shine Straightening</td><td>₹2,500/-</td><td>₹4,900/-</td><td>₹6,900/-</td><td class="font-bold text-[#e05d76]">₹8,900/-</td></tr>
+                        <tr><td class="p-2 font-bold">Hair Botox Treatment</td><td>₹2,500/-</td><td>₹3,500/-</td><td>₹6,500/-</td><td class="font-bold text-[#e05d76]">₹7,500/-</td></tr>
+                        <tr><td class="p-2 font-bold">Pro Keratin Treatment</td><td>₹2,900/-</td><td>₹4,900/-</td><td>₹6,900/-</td><td class="font-bold text-[#e05d76]">₹8,900/-</td></tr>
+                        <tr><td class="p-2 font-bold">Nanoplastia Treatment</td><td>₹3,900/-</td><td>₹5,900/-</td><td>₹8,900/-</td><td class="font-bold text-[#e05d76]">₹9,900/-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= 3. NAILS & HAND CARE CATEGORY ================= -->
+    <div id="nails-cat" class="salon-category-content hidden space-y-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Manicure & Pedicure -->
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">HAND MANICURE & LEG PEDICURE</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Relaxing Manicure & Pedicure</span> <span class="font-bold text-[#e05d76]">₹2,000/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Premium Manicure & Pedicure</span> <span class="font-bold text-[#e05d76]">₹3,200/-</span></div>
+                </div>
+            </div>
+
+            <!-- Nail Art & Extensions -->
+            <div class="bg-white p-6 rounded-lg border border-gray-100 shadow-sm">
+                <h3 class="text-lg font-bold text-gray-900 font-serif-heading border-b border-pink-100 pb-2 mb-4">NAIL ART & EXTENSIONS</h3>
+                <div class="space-y-3 text-xs">
+                    <div class="flex justify-between border-b pb-1"><span>Real Nail Gel Polish</span> <span class="font-bold text-[#e05d76]">₹199/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Real Nail Gel Polish & Art</span> <span class="font-bold text-[#e05d76]">₹399/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Temporary Extensions & Gel Polish</span> <span class="font-bold text-[#e05d76]">₹699/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Temporary Extensions & Art</span> <span class="font-bold text-[#e05d76]">₹999/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Temporary Extensions & Gel Art</span> <span class="font-bold text-[#e05d76]">₹1,299/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Gel Extensions & Gel Polish</span> <span class="font-bold text-[#e05d76]">₹1,499/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Gel Extensions & Art</span> <span class="font-bold text-[#e05d76]">₹1,899/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Acrylic Extensions & Gel Polish</span> <span class="font-bold text-[#e05d76]">₹1,599/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Acrylic Extensions & Art</span> <span class="font-bold text-[#e05d76]">₹1,999/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Acrylic Extensions & Acrylic Art</span> <span class="font-bold text-[#e05d76]">₹2,399/-</span></div>
+                    <div class="flex justify-between border-b pb-1"><span>Nail Protein Treatment</span> <span class="font-bold text-[#e05d76]">₹5,000/-</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Booking CTA Button at Bottom -->
+    <div class="mt-8 text-center">
+        <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20want%20to%20book%20a%20Salon%20Service." 
+           target="_blank" 
+           class="inline-block bg-black text-white px-8 py-3 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition">
+            Book Salon Service on WhatsApp
+        </a>
+    </div>
+
+</div>        
         </main>
 
         <!-- Floating WhatsApp Button -->
@@ -473,36 +731,64 @@
     </div>
 
     <!-- TAB SWITCHING SCRIPT -->
-    <script>
-        function openTab(tabId, clickedBtn) {
-            // Hide all tab content
-            var allTabs = document.querySelectorAll('.tab-content');
-            allTabs.forEach(function(tab) {
-                tab.classList.add('hidden');
-                tab.classList.remove('block');
-            });
+<script>
+    function openTab(tabId, clickedBtn) {
+        // Hide all tab content
+        var allTabs = document.querySelectorAll('.tab-content');
+        allTabs.forEach(function(tab) {
+            tab.classList.add('hidden');
+            tab.classList.remove('block');
+        });
 
-            // Reset all buttons styling
-            var allButtons = document.querySelectorAll('.tab-btn');
-            allButtons.forEach(function(btn) {
-                btn.classList.remove('bg-pink-500', 'text-white', 'border-pink-500');
-                btn.classList.add('bg-gray-100', 'text-gray-700', 'border-gray-200');
-            });
+        // Reset all buttons styling
+        var allButtons = document.querySelectorAll('.tab-btn');
+        allButtons.forEach(function(btn) {
+            btn.classList.remove('bg-pink-500', 'text-white', 'border-pink-500');
+            btn.classList.add('bg-gray-100', 'text-gray-700', 'border-gray-200');
+        });
 
-            // Show selected tab
-            var activeTab = document.getElementById(tabId);
-            if (activeTab) {
-                activeTab.classList.remove('hidden');
-                activeTab.classList.add('block');
-            }
-
-            // Set active state for clicked button
-            if (clickedBtn) {
-                clickedBtn.classList.remove('bg-gray-100', 'text-gray-700', 'border-gray-200');
-                clickedBtn.classList.add('bg-pink-500', 'text-white', 'border-pink-500');
-            }
+        // Show selected tab
+        var activeTab = document.getElementById(tabId);
+        if (activeTab) {
+            activeTab.classList.remove('hidden');
+            activeTab.classList.add('block');
         }
-    </script>
 
+        // Set active state for clicked button
+        if (clickedBtn) {
+            clickedBtn.classList.remove('bg-gray-100', 'text-gray-700', 'border-gray-200');
+            clickedBtn.classList.add('bg-pink-500', 'text-white', 'border-pink-500');
+        }
+    }
+
+    function openSalonCategory(catId, clickedBtn) {
+        // Hide all sub-categories
+        var allCats = document.querySelectorAll('.salon-category-content');
+        allCats.forEach(function(cat) {
+            cat.classList.add('hidden');
+            cat.classList.remove('block');
+        });
+
+        // Reset button styles
+        var allCatBtns = document.querySelectorAll('.salon-cat-btn');
+        allCatBtns.forEach(function(btn) {
+            btn.classList.remove('bg-[#f8a8b8]', 'text-gray-900', 'font-bold');
+            btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+
+        // Show clicked category
+        var activeCat = document.getElementById(catId);
+        if (activeCat) {
+            activeCat.classList.remove('hidden');
+            activeCat.classList.add('block');
+        }
+
+        // Set light pink active style
+        if (clickedBtn) {
+            clickedBtn.classList.remove('bg-gray-100', 'text-gray-700');
+            clickedBtn.classList.add('bg-[#f8a8b8]', 'text-gray-900', 'font-bold');
+        }
+    }
+</script>
 </body>
 </html>
