@@ -34,36 +34,40 @@
         <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 z-30 hidden md:hidden backdrop-blur-sm"></div>
 
         <!-- LEFT SIDEBAR -->
-        <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-black text-white z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 border-r border-gray-900 flex flex-col justify-between p-4">
-            <div>
-                <div class="bg-[#f2748e] rounded-2xl p-4 text-center mb-6 shadow-md">
-                    <a href="index.html" class="block">
-                        <img src="./public/logo.jpeg" alt="Khushi Makeover Logo" class="w-full max-w-[120px] mx-auto h-auto object-contain rounded-lg">
-                    </a>
-                </div>        
-                <!-- Navigation Links -->
-                <nav class="flex flex-col gap-6 text-[11px] font-semibold tracking-[0.25em] uppercase pl-2">
-                    <a href="index.html" class="text-gray-400 hover:text-[#f8a8b8] transition">HOME</a>
-                    <a href="about.html" class="text-gray-400 hover:text-[#f8a8b8] transition">ABOUT</a>
-                    <a href="services.html" class="text-[#f8a8b8] font-bold">SERVICES</a>
-                    <a href="portfolio.html" class="text-gray-400 hover:text-[#f8a8b8] transition">PORTFOLIO</a>
-                    <a href="contact.html" class="text-gray-400 hover:text-[#f8a8b8] transition">CONTACT</a>
-                </nav>
-            </div>
+<!-- Exact 2nd Image wala Sidebar Code -->
+<aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-black text-white z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 border-r border-gray-900 flex flex-col justify-between p-6">
+    
+    <div>
+        <!-- Logo Box -->
+        <div class="bg-[#f2748e] rounded-2xl p-4 text-center mb-8 shadow-md">
+            <a href="index.html" class="block">
+                <img src="./public/logo.jpeg" alt="Khushi Makeover Logo" class="w-full max-w-[120px] mx-auto h-auto object-contain rounded-lg">
+            </a>
+        </div>        
+        
+        <!-- Navigation Links -->
+        <nav class="flex flex-col gap-5 text-xs font-semibold tracking-[0.2em] uppercase text-left pl-2">
+            <a href="index.html" class="text-gray-400 hover:text-[#f8a8b8] transition py-1">HOME</a>
+            <a href="about.html" class="text-gray-400 hover:text-[#f8a8b8] transition py-1">ABOUT</a>
+            <a href="service.html" class="text-[#f8a8b8] font-bold py-1">SERVICES</a>
+            <a href="portfolio.html" class="text-gray-400 hover:text-[#f8a8b8] transition py-1">PORTFOLIO</a>
+            <a href="contact.html" class="text-gray-400 hover:text-[#f8a8b8] transition py-1">CONTACT</a>
+        </nav>
+    </div>
 
-            <!-- Bottom Information & Social Icons -->
-            <div class="pt-6 border-t border-neutral-800/80 flex flex-col gap-3 text-gray-400">
-                <div class="flex items-center gap-3">
-                    <a href="https://www.instagram.com/khushiimakeover_official" target="_blank" class="hover:text-[#f8a8b8] transition"><i class="fa-brands fa-instagram text-base"></i></a>
-                    <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="hover:text-[#f8a8b8] transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-                </div>
-                <div class="text-[10px] text-gray-500 space-y-1">
-                    <p class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-[9px]"></i> South Bopal, Ahmedabad</p>
-                    <p class="text-[9px] text-gray-600 mt-2">©2026 KHUSHI MAKEOVER</p>
-                </div>
-            </div>
-        </aside>
+    <!-- Bottom Social & Address -->
+    <div class="pt-6 border-t border-neutral-800 flex flex-col gap-3 text-gray-400">
+        <div class="flex items-center gap-4">
+            <a href="https://www.instagram.com/khushiimakeover_official" target="_blank" class="hover:text-[#f8a8b8] transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+            <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="hover:text-[#f8a8b8] transition"><i class="fa-brands fa-facebook-f text-base"></i></a>
+        </div>
+        <div class="text-[10px] text-gray-500 space-y-1">
+            <p class="flex items-center gap-1"><i class="fa-solid fa-location-dot text-[9px]"></i> South Bopal, Ahmedabad</p>
+            <p class="text-[9px] text-gray-600 mt-2">©2026 KHUSHI MAKEOVER</p>
+        </div>
+    </div>
 
+</aside>
         <!-- MAIN CONTENT AREA -->
         <main class="w-full md:w-[calc(100%-16rem)] md:ml-64 bg-white min-h-screen text-gray-900 p-4 md:p-8">
             <div class="max-w-6xl mx-auto">
