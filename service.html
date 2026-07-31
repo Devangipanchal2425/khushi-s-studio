@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khushi Patel - Services & Packages</title>
+
+    <!-- ✨ AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Tailwind CSS CDN -->    
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -98,7 +102,7 @@
                 </div>
 
                 <!-- TAB 1: BRIDAL & PRE-FUNCTION -->
-                <div id="bridal-tab" class="tab-content block">
+                <div id="bridal-tab" class="tab-content block" data-aos="fade-right">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Package 1: Normal Makeup -->
                         <div class="bg-white border border-gray-100 rounded-sm p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition">
@@ -286,7 +290,7 @@
                 </div>
 
                 <!-- TAB 2: KOREAN HAIR SPA -->
-                <div id="korean-tab" class="tab-content hidden">
+                <div id="korean-tab" class="tab-content hidden" data-aos="fade-left" >
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-white border border-gray-100 rounded-lg p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                             <div>
@@ -334,7 +338,7 @@
                 </div>
 
                 <!-- TAB 3: PRE-BRIDAL SPA -->
-                <div id="pre-bridal-tab" class="tab-content hidden">
+                <div id="pre-bridal-tab" class="tab-content hidden" data-aos="fade-up" >
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold uppercase text-gray-900">PRE-BRIDAL SPA PACKAGES</h2>
                         <p class="text-xs text-gray-500 mt-1">Complete head-to-toe pampering and glow treatments before your big day.</p>
@@ -404,7 +408,7 @@
                 </div>
 
                 <!-- TAB 4: SALON MENU -->
-                <div id="salon-tab" class="tab-content hidden">
+                <div id="salon-tab" class="tab-content hidden" data-aos="zoom-in">
                     <div class="flex justify-center space-x-2 mb-8 border-b pb-4 border-gray-100">
                         <button onclick="openSalonCategory('skin-cat', this)" class="salon-cat-btn bg-[#f8a8b8] text-gray-900 font-bold px-4 py-2 rounded-full text-xs tracking-wider uppercase transition">✨ Skin Care</button>
                         <button onclick="openSalonCategory('hair-cat', this)" class="salon-cat-btn bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-xs tracking-wider uppercase transition hover:bg-pink-50">💇‍♀️ Hair Care</button>
@@ -853,5 +857,16 @@
             if (recommendationBox) recommendationBox.classList.remove('hidden');
         }
     </script>
+
+    <!-- ✨ AOS Animation JS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,  /* Animation ki speed (milliseconds) */
+        once: true,     /* Ek baar scroll hone par hi animate ho */
+        offset: 80      /* Scroll karte hi trigger hone ka distance */
+    });
+</script>
+    
 </body>
 </html>
