@@ -18,9 +18,22 @@
 
     <div class="flex flex-col md:flex-row min-h-screen w-full">
 
+        <!-- MOBILE TOP NAVBAR (Sirf Mobile par dikhega) -->
+<header class="md:hidden flex items-center justify-between bg-black p-4 sticky top-0 z-50 border-b border-gray-800">
+    <div class="bg-[#f2748e] rounded-lg p-1 w-9 text-center">
+        <img src="/logo.jpeg" alt="Logo" class="w-full h-auto rounded">
+    </div>
+    <span class="font-serif font-bold text-sm tracking-widest text-[#f8a8b8]">KHUSHI MAKEOVER</span>
+    <button onclick="toggleMenu()" class="text-white text-xl p-1 focus:outline-none">
+        <i id="menu-icon" class="fa-solid fa-bars"></i>
+    </button>
+</header>
+
+<!-- Overlay background for Mobile -->
+<div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 z-30 hidden md:hidden backdrop-blur-sm"></div>
+
         <!-- ================= LEFT SIDEBAR (Dark Theme) ================= -->
-        <aside class="w-full md:w-64 bg-[#0d0d0d] border-r border-neutral-800 flex flex-col justify-between p-6 md:fixed md:h-screen z-40 shrink-0">
-            <div>
+            <aside id="sidebar" class="fixed md:sticky top-0 left-0 h-screen w-[260px] bg-black p-6 flex flex-col justify-between shrink-0 z-40 transition-transform duration-300 -translate-x-full md:translate-x-0 border-r border-gray-800">            <div>
                 <!-- PINK BOX WITH LOGO -->
                 <div class="bg-[#f2748e] rounded-2xl p-4 text-center mx-3 my-4 shadow-md">
                     <a href="index.html" class="block">
@@ -929,6 +942,23 @@
 
             const waMsg = encodeURIComponent(`Hi Khushi! I used your website advisor:\n• Occasion: ${occasion}\n• Skin: ${skin}\n• Package: ${title}`);
             document.getElementById('rec-wa-btn').href = `https://wa.me/919876543210?text=${waMsg}`;
+        }
+    }
+</script>
+
+    <script>
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const menuIcon = document.getElementById('menu-icon');
+
+        sidebar.classList.toggle('-translate-x-full');
+        overlay.classList.toggle('hidden');
+
+        if (sidebar.classList.contains('-translate-x-full')) {
+            menuIcon.className = "fa-solid fa-bars";
+        } else {
+            menuIcon.className = "fa-solid fa-xmark";
         }
     }
 </script>
