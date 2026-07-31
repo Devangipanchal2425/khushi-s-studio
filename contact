@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Khushi Makeover</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-black text-white font-sans min-h-screen">
+
+    <!-- MOBILE TOP NAVBAR -->
+    <header class="md:hidden flex items-center justify-between bg-black p-3 sticky top-0 z-50 border-b border-gray-800">
+        <div class="bg-[#f2748e] rounded-lg p-1 w-10 h-10 flex items-center justify-center overflow-hidden shrink-0">
+            <img src="./public/logo.jpeg" alt="KP" class="w-full h-full object-cover rounded">
+        </div>
+        <span class="font-serif font-bold text-xs tracking-widest text-[#f8a8b8]">KHUSHI MAKEOVER</span>
+        <button onclick="toggleMenu()" class="text-white text-xl p-1 focus:outline-none">
+            <i id="menu-icon" class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- OVERLAPPING CONTACT SECTION -->
+    <main class="w-full max-w-5xl mx-auto md:pl-64 my-8 md:my-20 px-4">
+        
+        <!-- Outer Wrapper Grid -->
+        <div class="relative flex flex-col md:flex-row items-center justify-center">
+            
+            <!-- LEFT FLOATING INFO CARD (Pink Box) -->
+            <div class="w-full md:w-5/12 bg-[#f2748e] text-white rounded-3xl p-8 shadow-2xl z-20 md:-mr-12 mb-6 md:mb-0 transform hover:-translate-y-1 transition duration-300">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold mb-8 tracking-wide">Contact Us</h2>
+                
+                <div class="space-y-6 text-sm font-medium">
+                    <!-- Location -->
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-location-dot text-lg mt-0.5 opacity-90"></i>
+                        <span>South Bopal, Ahmedabad, Gujarat - 380058</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid fa-envelope text-lg opacity-90"></i>
+                        <a href="mailto:hello@khushimakeover.com" class="hover:underline">hello@khushimakeover.com</a>
+                    </div>
+
+                    <!-- Primary Phone -->
+                    <div class="flex items-center gap-4">
+                        <i class="fa-solid fa-phone text-lg opacity-90"></i>
+                        <a href="tel:+919909289299" class="hover:underline font-bold">+91 99092 89299</a>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="flex items-center gap-4">
+                        <i class="fa-brands fa-whatsapp text-lg opacity-90"></i>
+                        <a href="https://wa.me/919870085600" target="_blank" class="hover:underline">+91 98700 85600</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT FORM CARD (White Box) -->
+            <div class="w-full md:w-8/12 bg-white text-gray-800 rounded-3xl p-8 md:p-12 md:pl-20 shadow-xl border border-gray-100 z-10">
+                
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-1">Get in Touch</h3>
+                <p class="text-gray-400 text-xs md:text-sm mb-8">Feel free to drop us a line below!</p>
+
+                <form onsubmit="sendContactToWhatsApp(event)" class="space-y-5">
+                    <!-- Name Input -->
+                    <div>
+                        <input type="text" id="contact-user-name" required placeholder="Your Name" 
+                               class="w-full bg-gray-50 text-gray-800 rounded-xl p-4 text-sm border border-gray-200 focus:border-[#f2748e] focus:bg-white focus:outline-none transition">
+                    </div>
+
+                    <!-- Contact Info Input -->
+                    <div>
+                        <input type="text" id="contact-user-info" required placeholder="Your Phone or Email" 
+                               class="w-full bg-gray-50 text-gray-800 rounded-xl p-4 text-sm border border-gray-200 focus:border-[#f2748e] focus:bg-white focus:outline-none transition">
+                    </div>
+
+                    <!-- Message Textarea -->
+                    <div>
+                        <textarea id="contact-user-msg" rows="4" required placeholder="Typing your message here...." 
+                                  class="w-full bg-gray-50 text-gray-800 rounded-xl p-4 text-sm border border-gray-200 focus:border-[#f2748e] focus:bg-white focus:outline-none transition resize-none"></textarea>
+                    </div>
+
+                    <!-- Send Button -->
+                    <div class="pt-2">
+                        <button type="submit" 
+                                class="bg-[#f2748e] hover:bg-[#e05b76] text-white font-bold py-3 px-10 rounded-full shadow-md hover:shadow-lg transition transform hover:scale-105 uppercase text-xs tracking-widest">
+                            SEND
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- JS SCRIPTS -->
+    <script>
+    // 1. Mobile Menu Toggle
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if (sidebar) sidebar.classList.toggle('-translate-x-full');
+        if (overlay) overlay.classList.toggle('hidden');
+
+        if (sidebar && sidebar.classList.contains('-translate-x-full')) {
+            menuIcon.className = "fa-solid fa-bars";
+        } else if (menuIcon) {
+            menuIcon.className = "fa-solid fa-xmark";
+        }
+    }
+
+    // 2. WhatsApp Form Submitter
+    function sendContactToWhatsApp(e) {
+        e.preventDefault();
+        const name = document.getElementById('contact-user-name')?.value;
+        const info = document.getElementById('contact-user-info')?.value;
+        const message = document.getElementById('contact-user-msg')?.value;
+
+        const waText = `Hi Khushi Makeover!\n\n📩 *New Contact Inquiry*\n👤 *Name:* ${name}\n📞 *Contact:* ${info}\n💬 *Message:* ${message}`;
+
+        window.open(`https://wa.me/919909289299?text=${encodeURIComponent(waText)}`, '_blank');
+    }
+    </script>
+</body>
+</html>
