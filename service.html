@@ -960,5 +960,64 @@
         }
     }
 </script>
+
+    <script>
+// Package Recommendation Logic Function
+function checkSelections() {
+    const occasion = document.getElementById('advisor-occasion')?.value;
+    const skin = document.getElementById('advisor-skin')?.value;
+    const budget = document.getElementById('advisor-budget')?.value;
+
+    const placeholder = document.getElementById('advisor-placeholder');
+    const recommendationBox = document.getElementById('advisor-recommendation');
+    
+    const recTitle = document.getElementById('rec-title');
+    const recDesc = document.getElementById('rec-desc');
+    const recPrice = document.getElementById('rec-price');
+    const recWaBtn = document.getElementById('rec-wa-btn');
+
+    // Jab tak teeno options select na ho, placeholder dikhao
+    if (!occasion || !skin || !budget) {
+        if (placeholder) placeholder.classList.remove('hidden');
+        if (recommendationBox) recommendationBox.classList.add('hidden');
+        return;
+    }
+
+    // Default package details
+    let title = "HD Makeup Package";
+    let price = "₹5,500/-";
+    let desc = `Perfect for ${occasion} with ${skin} skin type. Includes HD Makeup, Hair Styling, Eyelashes, and Saree Draping.`;
+
+    // Dynamic Logic based on selections
+    if (budget === "Budget Friendly" || occasion === "Party / Engagement") {
+        title = "Normal Makeup Package";
+        price = "₹3,500/-";
+        desc = `Budget-friendly & elegant look tailored for ${occasion}. Includes Normal Makeup, Curls/Hair Style, and Saree Draping.`;
+    } 
+    else if (budget === "Luxury Royal" || occasion === "Bridal") {
+        title = "Glass Makeup Package";
+        price = "₹7,500/-";
+        desc = `Ultra-glowing royal finish best suited for ${occasion} and ${skin} skin. Includes Glass Makeup, Real Flower Hair Style, Eye Lenses, and Extension.`;
+    } 
+    else if (budget === "Premium" || occasion === "Pre-Wedding") {
+        title = "HD Glam Special Package";
+        price = "₹5,500/-";
+        desc = `Long-lasting HD finish specially customized for ${skin} skin type during ${occasion}.`;
+    }
+
+    // Update UI Elements
+    if (recTitle) recTitle.innerText = title;
+    if (recDesc) recDesc.innerText = desc;
+    if (recPrice) recPrice.innerText = price;
+
+    // WhatsApp Message Custom Link Generator
+    const message = encodeURIComponent(`Hi Khushi Makeover! I used your Personal Beauty Advisor and would like to book:\n\n✨ Package: ${title}\n💰 Price: ${price}\n🎉 Occasion: ${occasion}\n💆 Skin Type: ${skin}\n💵 Budget: ${budget}`);
+    if (recWaBtn) recWaBtn.href = `https://wa.me/919909289299?text=${message}`;
+
+    // Hide placeholder and show recommendation
+    if (placeholder) placeholder.classList.add('hidden');
+    if (recommendationBox) recommendationBox.classList.remove('hidden');
+}
+</script>
 </body>
 </html>
