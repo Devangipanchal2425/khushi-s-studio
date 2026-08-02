@@ -96,8 +96,8 @@
             
             <div class="max-w-6xl mx-auto">
                 
-                <!-- Header Title Section -->
-                <div class="flex justify-between items-start mb-8">
+                <!-- Header Title & Social Icons Section -->
+                <div class="flex justify-between items-start mb-10 w-full">
                     <div>
                         <span class="text-accent text-xs font-semibold tracking-[0.25em] uppercase block mb-1">
                             WHAT WE DO
@@ -108,66 +108,68 @@
                         <div class="w-16 h-[2px] bg-accent mt-3"></div>
                     </div>
 
-            <!-- Top Social Circle Icons (Increased Size) -->
-            <div class="flex gap-2">
-                <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 text-black flex items-center justify-center text-base hover:bg-black hover:text-white transition">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 text-black flex items-center justify-center text-xs hover:bg-black hover:text-white transition">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-            </div>
-            <!-- Services Image Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                
-                <!-- Service Card 1 (a.jpeg) -->
-                <div class="relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/j.jpeg', 'Bridal Makeover For Wedding Or Reception')">
-                    <div class="w-full h-[480px] bg-gray-100 overflow-hidden">
-                        <img src="./public/preety.jpeg" 
-                             onerror="this.onerror=null; this.src='a.jpeg';" 
-                             alt="Bridal Makeover" 
-                             class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
-                        <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
-                            Bridal Makeover For Wedding Or Reception                 
-                        </p>
+                    <!-- Top-Right Larger Social Circle Icons -->
+                    <div class="flex gap-3 items-center">
+                        <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 text-black flex items-center justify-center text-base hover:bg-black hover:text-white transition shadow-sm">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 text-black flex items-center justify-center text-base hover:bg-black hover:text-white transition shadow-sm">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
                     </div>
                 </div>
-                
-            
-                <!-- Service Card 2 (d.jpeg) -->
-                <div class="relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/d.jpeg', 'Pre Function Engagement Or Sangeet')">
-                    <div class="w-full h-[480px] bg-gray-100 overflow-hidden">
-                        <img src="./public/d.jpeg" 
-                             onerror="this.onerror=null; this.src='d.jpeg';" 
-                             alt="Pre Function Engagement" 
-                             class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
-                        <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
-                            Pre Function Engagement Or Sangeet
-                        </p>
-                    </div>
-                </div>
-            
-            </div>
+
+                <!-- Services Image Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full">
+                    
+                    <!-- Service Card 1 (preety.jpeg) -->
+                    <div class="relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/preety.jpeg', 'Bridal Makeover For Wedding Or Reception')">
+                        <div class="w-full h-[520px] bg-gray-100 overflow-hidden">
+                            <img src="./public/preety.jpeg" 
+                                 onerror="this.onerror=null; this.src='preety.jpeg';" 
+                                 alt="Bridal Makeover" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
                         </div>
-            
-                    </main>
-            
-                    <!-- Floating WhatsApp Button -->
-                    <a href="https://wa.me/919870085600?text=I%20would%20like%20to%20inquiry%20about%20your%20makeup%20and%20salon%20services" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-xl z-30 hover:scale-105 transition">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-            
-                    <!-- Scroll To Top Button -->
-                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-20 border border-gray-300 text-gray-400 hover:text-accent hover:border-accent w-10 h-10 rounded-full bg-white flex items-center justify-center text-sm shadow-sm z-30 transition hidden md:flex">
-                        <i class="fa-solid fa-chevron-up"></i>
-                    </button>
-            
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
+                            <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
+                                Bridal Makeover For Wedding Or Reception
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2 (d.jpeg) -->
+                    <div class="relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/d.jpeg', 'Pre Function Engagement Or Sangeet')">
+                        <div class="w-full h-[520px] bg-gray-100 overflow-hidden">
+                            <img src="./public/d.jpeg" 
+                                 onerror="this.onerror=null; this.src='d.jpeg';" 
+                                 alt="Pre Function Engagement" 
+                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
+                            <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
+                                Pre Function Engagement Or Sangeet
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
-            
+
+            </div>
+
+        </main>
+
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/919870085600?text=I%20would%20like%20to%20inquiry%20about%20your%20makeup%20and%20salon%20services" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-xl z-30 hover:scale-105 transition">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <!-- Scroll To Top Button -->
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-20 border border-gray-300 text-gray-400 hover:text-accent hover:border-accent w-10 h-10 rounded-full bg-white flex items-center justify-center text-sm shadow-sm z-30 transition hidden md:flex">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+
+    </div>
+
     <!-- ==================== IMAGE POPUP / LIGHTBOX MODAL ==================== -->
     <div id="imageModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300">
         <!-- Close Button -->
