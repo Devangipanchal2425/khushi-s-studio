@@ -1,222 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Khushi Patel Makeup Artist</title>
+    <title>Khushi Patel | MakeUp Artist</title>
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome (Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
+            background-color: #0c0c0c;
+            color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
-            color: #555555;
+            overflow-x: hidden;
         }
 
+        /* Tall Condensed Font for Heading */
         .font-heading {
             font-family: 'Oswald', sans-serif;
             letter-spacing: 2px;
         }
 
-        /* Light Pink Color Accent matched with Screenshot */
-        .text-accent {
-            color: #eb9cb0;
-        }
-        .bg-accent {
-            background-color: #eb9cb0;
-        }
-        .border-accent {
-            border-color: #eb9cb0;
+        /* Dark Overlay for Text Readability */
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.1) 100%);
         }
     </style>
 </head>
-<body class="bg-white antialiased text-gray-600">
+<body class="bg-[#0c0c0c] text-white antialiased">
 
-    <div class="flex min-h-screen relative">
+    <!-- ==================== TOP 3-LINE HAMBURGER BUTTON (ALL SCREENS) ==================== -->
+    <button onclick="toggleSidebar()" class="fixed top-6 left-6 z-50 text-white bg-black/60 backdrop-blur-md border border-neutral-800 p-3.5 rounded-md hover:text-[#ea829b] transition shadow-2xl flex items-center gap-2 group cursor-pointer">
+        <i class="fa-solid fa-bars text-xl group-hover:scale-110 transition"></i>
+    </button>
 
-        <!-- Mobile Header Toggle (Only visible on small screens) -->
-        <div class="lg:hidden fixed top-0 left-0 w-full bg-black text-white z-50 p-4 flex justify-between items-center">
-            <div class="bg-accent text-black p-2 text-center w-12 h-12 flex flex-col justify-center items-center">
-                <span class="text-xl font-serif font-bold leading-none">KP</span>
-            </div>
-            <button onclick="toggleSidebar()" class="text-2xl text-white focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
+    <div class="min-h-screen relative">
 
-        <!-- ==================== LEFT FIXED BLACK SIDEBAR ==================== -->
-        <aside id="sidebar" class="w-64 bg-black text-white fixed top-0 left-0 h-screen flex flex-col justify-between p-8 z-50 -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <!-- ==================== POPUP SLIDING SIDEBAR ==================== -->
+        <aside id="sidebar" class="w-64 bg-[#0a0a0a]/95 backdrop-blur-lg border-r border-neutral-900 fixed top-0 left-0 h-screen flex flex-col justify-between p-7 z-50 transition-transform duration-300 transform -translate-x-full shadow-2xl">
             
-            <!-- Close Button for Mobile -->
-            <button onclick="toggleSidebar()" class="lg:hidden absolute top-4 right-4 text-gray-400 text-xl">
-                <i class="fa-solid fa-xmark"></i>
+            <!-- Close Button (X) -->
+            <button onclick="toggleSidebar()" class="absolute top-6 right-6 text-gray-400 hover:text-[#ea829b] transition cursor-pointer">
+                <i class="fa-solid fa-xmark text-2xl"></i>
             </button>
 
             <div>
                 <!-- Pink Square Logo Box -->
-                <a href="./index.html" class="inline-block mb-12">
-                    <div class="bg-accent text-black w-28 h-28 p-3 flex flex-col items-center justify-center text-center shadow-md">
-                        <span class="text-4xl font-serif font-bold tracking-tight leading-none mb-1">KP</span>
-                        <span class="text-[9px] font-bold tracking-widest uppercase leading-tight">KHUSHI PATEL</span>
-                        <span class="text-[7px] tracking-widest uppercase mt-0.5 opacity-90">MAKE-UP ARTIST</span>
+                <a href="index.html" class="inline-block mb-10 mt-6">
+                    <div class="bg-[#ea829b] text-black w-24 h-24 p-2 flex flex-col items-center justify-center text-center shadow-lg">
+                        <span class="text-3xl font-serif font-extrabold tracking-wider leading-none mb-1">KP</span>
+                        <span class="text-[8px] font-bold tracking-widest uppercase leading-tight">KHUSHI PATEL</span>
+                        <span class="text-[6px] tracking-widest uppercase mt-0.5 opacity-80">MAKE-UP ARTIST</span>
                     </div>
                 </a>
 
                 <!-- Navigation Links -->
-                <nav class="space-y-5 text-xs font-bold tracking-[0.2em] uppercase">
-                    <a href="./index.html" class="block text-gray-300 hover:text-accent transition">HOME</a>
-                    <a href="./about.html" class="block text-accent transition">ABOUT</a>
-                    <a href="./service.html" class="block text-gray-300 hover:text-accent transition">SERVICES</a>
-                    <a href="#portfolio" class="block text-gray-300 hover:text-accent transition">PORTFOLIO</a>
-                    <a href="#blog" class="block text-gray-300 hover:text-accent transition">BLOG</a>
-                    <a href="#contact" class="block text-gray-300 hover:text-accent transition">CONTACT</a>
+                <nav class="space-y-4 text-[11px] font-semibold tracking-[0.2em] uppercase">
+                    <a href="index.html" class="block text-white hover:text-[#ea829b] transition py-1">HOME</a>
+                    <a href="#about" class="block text-gray-400 hover:text-[#ea829b] transition py-1">ABOUT</a>
+                    <a href="service.html" class="block text-gray-400 hover:text-[#ea829b] transition py-1">SERVICES</a>
+                    <a href="#portfolio" class="block text-gray-400 hover:text-[#ea829b] transition py-1">PORTFOLIO</a>
+                    <a href="#blog" class="block text-gray-400 hover:text-[#ea829b] transition py-1">BLOG</a>
+                    <a href="#contact" class="block text-gray-400 hover:text-[#ea829b] transition py-1">CONTACT</a>
                 </nav>
             </div>
 
-            <!-- Sidebar Footer Socials & Copyright -->
+            <!-- Sidebar Footer Socials -->
             <div class="pt-6">
-                <div class="border-t border-neutral-800 w-8 mb-4"></div>
-                <div class="flex gap-4 text-xs text-gray-400 mb-4">
-                    <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="hover:text-accent transition text-sm"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="hover:text-accent transition text-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                <div class="border-t border-neutral-800/80 w-8 mb-4"></div>
+                <div class="flex gap-4 text-xs text-gray-400 mb-3">
+                    <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="hover:text-[#ea829b] transition text-base"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="hover:text-[#ea829b] transition text-base"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
-                <p class="text-[9px] text-gray-500 uppercase tracking-widest">©2026 MAKEUP ARTIST.</p>
+                <p class="text-[8px] text-gray-500 uppercase tracking-widest">©2026 MAKEUP ARTIST.</p>
             </div>
         </aside>
 
-        <!-- Overlay Background for Mobile Drawer -->
-        <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
+        <!-- Overlay Background Click to Close Sidebar -->
+        <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity"></div>
 
-        <!-- ==================== MAIN CONTENT AREA (WHITE BG) ==================== -->
-        <main class="flex-1 lg:ml-64 bg-white min-h-screen px-6 md:px-12 lg:px-16 pt-24 lg:pt-16 pb-16">
+        <!-- ==================== MAIN HERO SECTION (FULL SCREEN BG) ==================== -->
+        <main class="w-full min-h-screen relative bg-cover bg-center bg-no-repeat" style="background-image: url('./public/bride.jpeg');">
             
-            <div class="max-w-6xl mx-auto">
+            <!-- Dark Gradient Fade Overlay -->
+            <div class="absolute inset-0 hero-gradient"></div>
+            
+            <div class="relative z-10 w-full h-screen flex flex-col justify-center px-8 lg:px-20 pt-10">
                 
-                <!-- Main Layout Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                    
-                    <!-- Left Photo Column -->
-                    <div class="lg:col-span-5">
-                        <div class="w-full bg-gray-100 overflow-hidden shadow-sm">
-                            <img src="./public/barbie.jpeg" 
-                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000';" 
-                                 alt="Khushi Patel" 
-                                 class="w-full h-[540px] object-cover object-center">
-                        </div>
-                    </div>
+                <!-- Top Pink Subtitle Line -->
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-7 h-[1.5px] bg-[#ea829b]"></div>
+                    <span class="text-[#ea829b] text-[11px] font-semibold tracking-[0.35em] uppercase">
+                        KHUSHI PATEL
+                    </span>
+                </div>
 
-                    <!-- Right Text Column -->
-                    <div class="lg:col-span-7 relative">
-                        
-                        <!-- Top Social Circle Icons (As seen in Screenshot) -->
-                        <div class="flex justify-end gap-2 mb-6">
-                            <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="w-8 h-8 rounded-full bg-pink-100 text-accent flex items-center justify-center text-xs hover:bg-accent hover:text-white transition">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-8 h-8 rounded-full bg-pink-100 text-accent flex items-center justify-center text-xs hover:bg-accent hover:text-white transition">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                        </div>
+                <!-- Main Title (1 Line Lock) -->
+                <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[85px] xl:text-[95px] text-white uppercase leading-[0.9] mb-8 font-semibold whitespace-nowrap">
+                    MAKEUP ARTIST
+                </h1>
 
-                        <!-- Name Heading -->
-                        <span class="text-accent text-sm font-semibold tracking-[0.25em] uppercase block mb-1">
-                            KHUSHI PATEL
-                        </span>
+                <!-- Pink About Me Button -->
+                <div class="mb-8">
+                    <a href="#about" class="inline-block bg-[#ea829b] hover:bg-[#d97089] text-white font-medium text-xs tracking-wider px-7 py-3 transition shadow-md rounded-sm">
+                        About Me
+                    </a>
+                </div>
 
-                        <h1 class="font-heading text-4xl md:text-5xl text-black uppercase font-bold tracking-wider mb-6">
-                            MAKEUP ARTIST
-                        </h1>
-
-                        <!-- Custom Content Paragraphs (Your original text retained) -->
-                        <div class="space-y-4 text-xs md:text-[13px] leading-relaxed text-gray-500 font-normal">
-                            <p>
-                                Welcome to my creative universe of luxury bridal artistry. I am <strong class="text-gray-800 font-medium">Khushi Patel</strong>, a high-definition makeup artist devoted to crafting timeless, ethereal, and personalized wedding transformations. My philosophy revolves around celebrating your natural elegance and enhancing the unique grace you already possess.
-                            </p>
-
-                            <p>
-                                Specializing in couture bridal looks, soft glam finishes, and contemporary hair sculpting, every makeover is thoughtfully designed to complement your wedding couture, personal aesthetic, and individual aura. From delicate skin-prep rituals to long-wear luxury cosmetics, every detail is seamlessly curated to ensure you look effortlessly radiant and feel truly unforgettable.
-                            </p>
-
-                            <p>
-                                To me, bridal makeup is far more than a technique—it is an intimate art form of capturing emotions, confidence, and joy. It is an absolute privilege to walk alongside you on your most cherished journey and make your dream bridal look come alive.
-                            </p>
-                        </div>
-
-                        <!-- AWARDS SECTION (Matching Screenshot Layout) -->
-                        <div class="mt-10 pt-6">
-                            <span class="text-accent text-xs font-semibold tracking-[0.25em] uppercase block mb-4">
-                                AWARDS & RECOGNITION
-                            </span>
-
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                                <!-- Award Box 1 -->
-                                <div class="border border-gray-200 p-3 flex flex-col items-center justify-center text-center h-20 hover:border-pink-300 transition">
-                                    <i class="fa-solid fa-trophy text-amber-500 text-xl mb-1"></i>
-                                    <span class="text-[9px] font-bold text-gray-700 uppercase">LUXURY BRIDAL</span>
-                                    <span class="text-[8px] text-gray-400">WINNER 2024</span>
-                                </div>
-
-                                <!-- Award Box 2 -->
-                                <div class="border border-gray-200 p-3 flex flex-col items-center justify-center text-center h-20 hover:border-pink-300 transition">
-                                    <i class="fa-solid fa-award text-purple-600 text-xl mb-1"></i>
-                                    <span class="text-[9px] font-bold text-gray-700 uppercase">HD MAKEUP ARTIST</span>
-                                    <span class="text-[8px] text-gray-400">AWARDS 2023</span>
-                                </div>
-
-                                <!-- Award Box 3 -->
-                                <div class="border border-gray-200 p-3 flex flex-col items-center justify-center text-center h-20 hover:border-pink-300 transition">
-                                    <i class="fa-solid fa-heart text-pink-500 text-xl mb-1"></i>
-                                    <span class="text-[9px] font-bold text-gray-700 uppercase">BEST BRIDAL GLAM</span>
-                                    <span class="text-[8px] text-gray-400">FAVORITE 2025</span>
-                                </div>
-
-                                <!-- Award Box 4 -->
-                                <div class="border border-gray-200 p-3 flex flex-col items-center justify-center text-center h-20 hover:border-pink-300 transition">
-                                    <i class="fa-solid fa-crown text-yellow-600 text-xl mb-1"></i>
-                                    <span class="text-[9px] font-bold text-gray-700 uppercase">EXCELLENCE ARTISTRY</span>
-                                    <span class="text-[8px] text-gray-400">AWARDS 2026</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
+                <!-- Social Circle Buttons -->
+                <div class="flex items-center gap-3">
+                    <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm border border-neutral-700 hover:border-[#ea829b] text-gray-300 hover:text-[#ea829b] flex items-center justify-center text-sm transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm border border-neutral-700 hover:border-[#ea829b] text-gray-300 hover:text-[#ea829b] flex items-center justify-center text-sm transition">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
                 </div>
 
             </div>
 
+            <!-- Scroll Down Arrow -->
+            <a href="#about" class="absolute bottom-5 left-1/2 -translate-x-1/2 text-gray-400 hover:text-[#ea829b] transition z-10 animate-bounce">
+                <i class="fa-solid fa-angles-down text-sm"></i>
+            </a>
+
+            <!-- Floating WhatsApp Button (With Direct Number & Pre-filled Message) -->
+            <a href="https://wa.me/919870085600?text=I%20would%20like%20to%20inquiry%20about%20your%20makeup%20and%20salon%20services" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20ba5a] text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-2xl z-50 transition transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
         </main>
-
-        <!-- Floating WhatsApp Button (Bottom Right) -->
-        <a href="https://wa.me/919870085600?text=I%20would%20like%20to%20inquiry%20about%20your%20makeup%20and%20salon%20services" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-xl z-50 hover:scale-105 transition">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <!-- Scroll To Top Circle Arrow (Matching Screenshot) -->
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-20 border border-gray-300 text-gray-400 hover:text-accent hover:border-accent w-10 h-10 rounded-full bg-white flex items-center justify-center text-sm shadow-sm z-50 transition hidden md:flex">
-            <i class="fa-solid fa-chevron-up"></i>
-        </button>
-
     </div>
 
-    <!-- Toggle Script for Mobile Responsive View -->
+    <!-- Sidebar Toggle Script -->
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebarOverlay');
-            sidebar.classList.toggle('-translate-x-full');
-            overlay.classList.toggle('hidden');
+            
+            if (sidebar.classList.contains('-translate-x-full')) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
         }
     </script>
+
 </body>
 </html>
