@@ -30,32 +30,32 @@
             letter-spacing: 2px;
         }
 
-        /* Black Gradient Overlay for Text Readability */
+        /* Dark Overlay for Text Readability */
         .hero-gradient {
-            background: linear-gradient(to right, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.6) 45%, rgba(10,10,10,0.1) 100%);
+            background: linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.1) 100%);
         }
     </style>
 </head>
 <body class="bg-[#0c0c0c] text-white antialiased">
 
-    <!-- ==================== MOBILE HAMBURGER MENU (3 LINES) ==================== -->
-    <button onclick="toggleSidebar()" class="lg:hidden fixed top-6 left-6 z-50 text-white bg-black/60 backdrop-blur-sm p-3 rounded-md hover:text-[#ea829b] transition shadow-lg">
-        <i class="fa-solid fa-bars text-xl"></i>
+    <!-- ==================== TOP 3-LINE HAMBURGER BUTTON (ALL SCREENS) ==================== -->
+    <button onclick="toggleSidebar()" class="fixed top-6 left-6 z-50 text-white bg-black/60 backdrop-blur-md border border-neutral-800 p-3.5 rounded-md hover:text-[#ea829b] transition shadow-2xl flex items-center gap-2 group cursor-pointer">
+        <i class="fa-solid fa-bars text-xl group-hover:scale-110 transition"></i>
     </button>
 
-    <div class="min-h-screen flex relative">
+    <div class="min-h-screen relative">
 
-        <!-- ==================== LEFT SIDEBAR ==================== -->
-        <aside id="sidebar" class="w-64 bg-[#0a0a0a] border-r border-neutral-900/80 fixed top-0 left-0 h-screen flex flex-col justify-between p-7 z-50 transition-transform duration-300 transform -translate-x-full lg:translate-x-0 shadow-2xl lg:shadow-none">
+        <!-- ==================== POPUP SLIDING SIDEBAR ==================== -->
+        <aside id="sidebar" class="w-64 bg-[#0a0a0a]/95 backdrop-blur-lg border-r border-neutral-900 fixed top-0 left-0 h-screen flex flex-col justify-between p-7 z-50 transition-transform duration-300 transform -translate-x-full shadow-2xl">
             
-            <!-- Close Button for Mobile -->
-            <button onclick="toggleSidebar()" class="lg:hidden absolute top-6 right-6 text-gray-400 hover:text-white transition">
+            <!-- Close Button (X) -->
+            <button onclick="toggleSidebar()" class="absolute top-6 right-6 text-gray-400 hover:text-[#ea829b] transition cursor-pointer">
                 <i class="fa-solid fa-xmark text-2xl"></i>
             </button>
 
             <div>
                 <!-- Pink Square Logo Box -->
-                <a href="index.html" class="inline-block mb-10 mt-8 lg:mt-0">
+                <a href="index.html" class="inline-block mb-10 mt-6">
                     <div class="bg-[#ea829b] text-black w-24 h-24 p-2 flex flex-col items-center justify-center text-center shadow-lg">
                         <span class="text-3xl font-serif font-extrabold tracking-wider leading-none mb-1">KP</span>
                         <span class="text-[8px] font-bold tracking-widest uppercase leading-tight">KHUSHI PATEL</span>
@@ -85,14 +85,16 @@
             </div>
         </aside>
 
+        <!-- Overlay Background Click to Close Sidebar -->
+        <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity"></div>
+
         <!-- ==================== MAIN HERO SECTION (FULL SCREEN BG) ==================== -->
-        <!-- Background Image set in the style attribute -->
-        <main class="flex-1 lg:ml-64 min-h-screen relative bg-cover bg-center bg-no-repeat" style="background-image: url('./public/bride.jpeg');">
+        <main class="w-full min-h-screen relative bg-cover bg-center bg-no-repeat" style="background-image: url('./public/bride.jpeg');">
             
-            <!-- Dark Gradient Fade Overlay (Text readable rahe uske liye) -->
+            <!-- Dark Gradient Fade Overlay -->
             <div class="absolute inset-0 hero-gradient"></div>
             
-            <div class="relative z-10 w-full h-screen flex flex-col justify-center px-8 lg:px-14 pt-16 lg:pt-0">
+            <div class="relative z-10 w-full h-screen flex flex-col justify-center px-8 lg:px-20 pt-10">
                 
                 <!-- Top Pink Subtitle Line -->
                 <div class="flex items-center gap-3 mb-3">
@@ -102,8 +104,8 @@
                     </span>
                 </div>
 
-                <!-- Main BOLD Title (Strictly 1 Line Using whitespace-nowrap) -->
-                <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[80px] xl:text-[95px] text-white uppercase leading-[0.9] mb-8 font-semibold whitespace-nowrap">
+                <!-- Main Title (1 Line Lock) -->
+                <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[85px] xl:text-[95px] text-white uppercase leading-[0.9] mb-8 font-semibold whitespace-nowrap">
                     MAKEUP ARTIST
                 </h1>
 
@@ -143,10 +145,14 @@
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
             if (sidebar.classList.contains('-translate-x-full')) {
                 sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
             } else {
                 sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
             }
         }
     </script>
