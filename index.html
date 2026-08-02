@@ -3,134 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khushi Patel - Luxury Bridal Studio</title>
+    <title>Khushi Patel | MakeUp Artist</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Custom Color Palette (Obsidian Rose Gold) -->
+
+    <!-- Custom Colors Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'obsidian': '#0B0B0B',
-                        'rosegold': '#E8A2A8',
-                        'ivory': '#FAF6F0',
+                        'pink-brand': '#ea829b', // Exact Aayushi Patel Pink Accent
+                        'dark-bg': '#121212',    // Dark Studio Background
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-obsidian text-ivory antialiased selection:bg-rosegold selection:text-black">
 
-    <!-- ==================== 1. LUXURY NAVBAR ==================== -->
-    <header class="w-full border-b border-neutral-900 bg-obsidian/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif, system-ui;
+        }
+    </style>
+</head>
+<body class="bg-[#0d0d0d] text-white antialiased overflow-x-hidden">
+
+    <div class="min-h-screen flex flex-col lg:flex-row relative">
+
+        <!-- ==================== 1. LEFT FIXED SIDEBAR ==================== -->
+        <aside class="lg:w-64 w-full bg-black border-b lg:border-b-0 lg:border-r border-neutral-900 lg:fixed lg:top-0 lg:left-0 lg:h-screen flex flex-col justify-between p-8 z-40">
+            <div>
+                <!-- Pink Square Logo (Exact Match) -->
+                <a href="index.html" class="inline-block mb-12">
+                    <div class="bg-[#ea829b] text-black w-28 h-28 p-3 flex flex-col items-center justify-center text-center shadow-md">
+                        <span class="text-3xl font-serif font-extrabold tracking-wider leading-none mb-1">KP</span>
+                        <span class="text-[9px] font-bold tracking-widest uppercase leading-tight">KHUSHI PATEL</span>
+                        <span class="text-[7px] tracking-widest uppercase mt-0.5 opacity-80">MAKE-UP ARTIST</span>
+                    </div>
+                </a>
+
+                <!-- Vertical Navigation Links -->
+                <nav class="space-y-5 text-xs font-semibold tracking-[0.2em] uppercase">
+                    <a href="index.html" class="block text-white hover:text-[#ea829b] transition py-1">HOME</a>
+                    <a href="#about" class="block text-gray-400 hover:text-[#ea829b] transition py-1">ABOUT</a>
+                    <a href="service.html" class="block text-gray-400 hover:text-[#ea829b] transition py-1">SERVICES</a>
+                    <a href="#portfolio" class="block text-gray-400 hover:text-[#ea829b] transition py-1">PORTFOLIO</a>
+                    <a href="#blog" class="block text-gray-400 hover:text-[#ea829b] transition py-1">BLOG</a>
+                    <a href="#contact" class="block text-gray-400 hover:text-[#ea829b] transition py-1">CONTACT</a>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom Info (Socials & Copyright) -->
+            <div class="hidden lg:block pt-6">
+                <div class="border-t border-neutral-800 w-10 mb-4"></div>
+                <div class="flex gap-4 text-xs text-gray-400 mb-4">
+                    <a href="#" class="hover:text-[#ea829b] transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-[#ea829b] transition"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+                <p class="text-[9px] text-gray-500 uppercase tracking-widest">©2026 MAKEUP ARTIST.</p>
+            </div>
+        </aside>
+
+        <!-- ==================== 2. MAIN HERO SECTION (RIGHT SIDE) ==================== -->
+        <main class="flex-1 lg:ml-64 min-h-screen relative bg-gradient-to-r from-black via-[#111111] to-[#181818] flex items-center">
             
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="border border-rosegold/40 bg-rosegold/10 px-3 py-1.5 rounded-lg group-hover:border-rosegold transition">
-                    <span class="text-lg font-bold tracking-[0.25em] text-rosegold uppercase">KHUSHI</span>
+            <div class="w-full max-w-7xl mx-auto px-6 lg:px-16 py-12 grid grid-cols-1 lg:grid-cols-12 items-center gap-8 min-h-screen">
+                
+                <!-- Hero Left Text Content -->
+                <div class="lg:col-span-7 z-10 pt-10 lg:pt-0">
+                    
+                    <!-- Top Pink Subtitle Line -->
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-[2px] bg-[#ea829b]"></div>
+                        <span class="text-[#ea829b] text-xs font-semibold tracking-[0.35em] uppercase">
+                            KHUSHI PATEL
+                        </span>
+                    </div>
+
+                    <!-- Main Huge Bold Title -->
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black text-white tracking-tight uppercase leading-none mb-8">
+                        MAKEUP ARTIST
+                    </h1>
+
+                    <!-- Pink About Me Button -->
+                    <div class="mb-8">
+                        <a href="#about" class="inline-block bg-[#ea829b] hover:bg-[#e06d88] text-white font-medium text-xs tracking-wider px-7 py-3.5 transition shadow-lg rounded-sm">
+                            About Me
+                        </a>
+                    </div>
+
+                    <!-- Social Circle Buttons -->
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 hover:border-[#ea829b] text-gray-400 hover:text-[#ea829b] flex items-center justify-center text-xs transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 hover:border-[#ea829b] text-gray-400 hover:text-[#ea829b] flex items-center justify-center text-xs transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+
                 </div>
-                <div class="hidden sm:block text-[10px] tracking-[0.3em] text-gray-400 uppercase border-l border-neutral-800 pl-3">
-                    Patel Makeover
+
+                <!-- Hero Right Model Photo (Seamless Background Fit) -->
+                <div class="lg:col-span-5 relative flex justify-end items-end h-full">
+                    <div class="relative w-full max-w-md">
+                        <!-- Model Image -->
+                        <img src="./public/bride.jpeg" 
+                             alt="Khushi Patel Makeup Artist" 
+                             class="w-full h-auto max-h-[85vh] object-cover rounded-md shadow-2xl filter brightness-95">
+                        
+                        <!-- Smooth Blend Overlay (Bottom & Left) -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent lg:block hidden"></div>
+                    </div>
                 </div>
+
+            </div>
+
+            <!-- Scroll Down Double Arrow Indicator -->
+            <a href="#about" class="absolute bottom-6 left-1/2 lg:left-[55%] -translate-x-1/2 text-gray-400 hover:text-[#ea829b] transition animate-bounce">
+                <i class="fa-solid fa-angles-down text-sm"></i>
             </a>
 
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
-                <a href="#" class="text-rosegold font-bold">HOME</a>
-                <a href="#" class="hover:text-rosegold transition">ABOUT</a>
-                <a href="#" class="hover:text-rosegold transition">SERVICES</a>
-                <a href="#" class="hover:text-rosegold transition">PORTFOLIO</a>
-                <a href="#" class="hover:text-rosegold transition">CONTACT</a>
-            </nav>
+            <!-- Floating WhatsApp Button (Bottom Right) -->
+            <a href="https://wa.me/" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20ba5a] text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-2xl z-50 transition transform hover:scale-110">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
 
-            <!-- Book Button -->
-            <div>
-                <a href="#book" class="bg-rosegold hover:bg-rose-300 text-black font-bold text-[11px] tracking-widest uppercase px-5 py-2.5 rounded-full transition shadow-[0_0_15px_rgba(232,162,168,0.2)]">
-                    APPOINTMENT
-                </a>
-            </div>
-
-        </div>
-    </header>
-
-    <!-- ==================== 2. HERO SECTION (FIRST LOOK) ==================== -->
-    <section class="min-h-[85vh] flex items-center justify-center px-6 py-12 relative overflow-hidden">
-        
-        <!-- Subtle Background Glow -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rosegold/5 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <!-- Left Text Content -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                
-                <span class="inline-block text-rosegold text-xs font-semibold tracking-[0.3em] uppercase bg-neutral-900/80 border border-neutral-800 px-4 py-1.5 rounded-full">
-                    ✦ Luxury Bridal & Glamour Studio
-                </span>
-
-                <h1 class="text-4xl sm:text-6xl font-serif text-white leading-tight tracking-wide">
-                    ELEVATE YOUR <br>
-                    <span class="italic font-light text-rosegold">NATURAL BEAUTY</span>
-                </h1>
-
-                <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    Crafting timeless bridal looks and high-fashion makeover experiences. Every brushstroke is tailored to celebrate your unique elegance.
-                </p>
-
-                <!-- Action Buttons -->
-                <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#" class="bg-rosegold hover:bg-rose-300 text-black font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-xl transition text-center shadow-lg">
-                        EXPLORE SERVICES
-                    </a>
-                    <a href="#" class="border border-neutral-800 hover:border-rosegold text-gray-300 hover:text-white font-semibold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-xl transition text-center bg-neutral-950/50">
-                        VIEW GALLERY
-                    </a>
-                </div>
-
-                <!-- Stats / Trust Badges -->
-                <div class="pt-8 border-t border-neutral-900 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
-                    <div>
-                        <h3 class="text-2xl font-serif text-white">500+</h3>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Brides Crafted</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-serif text-white">8+</h3>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Years Exp.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-serif text-white">4.9★</h3>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Rating</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Right Hero Image Frame -->
-            <div class="lg:col-span-5 flex justify-center">
-                <div class="relative max-w-sm w-full">
-                    <!-- Decorative Border Frame -->
-                    <div class="absolute -inset-2 border border-rosegold/30 rounded-3xl -rotate-2"></div>
-                    
-                    <!-- Main Hero Image -->
-                    <div class="relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 shadow-2xl">
-                        <img src="./public/bride.jpeg" 
-                             alt="Khushi Patel Bridal Model" 
-                             class="w-full h-[500px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
+        </main>
+    </div>
 
 </body>
 </html>
