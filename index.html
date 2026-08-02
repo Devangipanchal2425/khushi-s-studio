@@ -1,68 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khushi Patel - Makeup Artist</title>
+    <title>Khushi Patel - Luxury Bridal Studio</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Color Palette (Obsidian Rose Gold) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'obsidian': '#0B0B0B',
+                        'rosegold': '#E8A2A8',
+                        'ivory': '#FAF6F0',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
+<body class="bg-obsidian text-ivory antialiased selection:bg-rosegold selection:text-black">
 
-    <!-- Main Hero Section -->
-    <section class="relative h-screen w-full flex flex-col justify-between p-6 md:p-12 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('./public/bride.jpeg');">        
-        <!-- Top Menu Button -->
-        <div class="flex justify-start">
-            <button class="w-12 h-12 md:w-14 md:h-14 bg-[#f8a8b8] hover:bg-[#f493a7] rounded-full flex flex-col items-center justify-center gap-1.5 shadow-lg transition duration-300 transform hover:scale-105 cursor-pointer">
-                <span class="w-6 h-[2px] bg-gray-900 rounded-full"></span>
-                <span class="w-6 h-[2px] bg-gray-900 rounded-full"></span>
-                <span class="w-6 h-[2px] bg-gray-900 rounded-full"></span>
-            </button>
+    <!-- ==================== 1. LUXURY NAVBAR ==================== -->
+    <header class="w-full border-b border-neutral-900 bg-obsidian/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="border border-rosegold/40 bg-rosegold/10 px-3 py-1.5 rounded-lg group-hover:border-rosegold transition">
+                    <span class="text-lg font-bold tracking-[0.25em] text-rosegold uppercase">KHUSHI</span>
+                </div>
+                <div class="hidden sm:block text-[10px] tracking-[0.3em] text-gray-400 uppercase border-l border-neutral-800 pl-3">
+                    Patel Makeover
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
+                <a href="#" class="text-rosegold font-bold">HOME</a>
+                <a href="#" class="hover:text-rosegold transition">ABOUT</a>
+                <a href="#" class="hover:text-rosegold transition">SERVICES</a>
+                <a href="#" class="hover:text-rosegold transition">PORTFOLIO</a>
+                <a href="#" class="hover:text-rosegold transition">CONTACT</a>
+            </nav>
+
+            <!-- Book Button -->
+            <div>
+                <a href="#book" class="bg-rosegold hover:bg-rose-300 text-black font-bold text-[11px] tracking-widest uppercase px-5 py-2.5 rounded-full transition shadow-[0_0_15px_rgba(232,162,168,0.2)]">
+                    APPOINTMENT
+                </a>
+            </div>
+
         </div>
+    </header>
 
-        <!-- Center Content (Name, Title, About Me) -->
-        <div class="max-w-2xl my-auto">
-            <!-- Small Accent Bar & Name -->
-            <div class="flex items-center gap-3 mb-3">
-                <span class="w-8 h-[2px] bg-[#f8a8b8]"></span>
-                <span class="text-[#f8a8b8] tracking-[0.25em] text-xs md:text-sm font-semibold uppercase">
-                    Khushi Patel
+    <!-- ==================== 2. HERO SECTION (FIRST LOOK) ==================== -->
+    <section class="min-h-[85vh] flex items-center justify-center px-6 py-12 relative overflow-hidden">
+        
+        <!-- Subtle Background Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rosegold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Text Content -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                
+                <span class="inline-block text-rosegold text-xs font-semibold tracking-[0.3em] uppercase bg-neutral-900/80 border border-neutral-800 px-4 py-1.5 rounded-full">
+                    ✦ Luxury Bridal & Glamour Studio
                 </span>
+
+                <h1 class="text-4xl sm:text-6xl font-serif text-white leading-tight tracking-wide">
+                    ELEVATE YOUR <br>
+                    <span class="italic font-light text-rosegold">NATURAL BEAUTY</span>
+                </h1>
+
+                <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Crafting timeless bridal looks and high-fashion makeover experiences. Every brushstroke is tailored to celebrate your unique elegance.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#" class="bg-rosegold hover:bg-rose-300 text-black font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-xl transition text-center shadow-lg">
+                        EXPLORE SERVICES
+                    </a>
+                    <a href="#" class="border border-neutral-800 hover:border-rosegold text-gray-300 hover:text-white font-semibold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-xl transition text-center bg-neutral-950/50">
+                        VIEW GALLERY
+                    </a>
+                </div>
+
+                <!-- Stats / Trust Badges -->
+                <div class="pt-8 border-t border-neutral-900 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+                    <div>
+                        <h3 class="text-2xl font-serif text-white">500+</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Brides Crafted</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif text-white">8+</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Years Exp.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif text-white">4.9★</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Rating</p>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Main Heading (Guaranteed Pure White Text) -->
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-bold tracking-tight leading-tight mb-8" style="color: #ffffff !important; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">
-                MAKEUP ARTIST
-            </h1>
-
-            <!-- About Me Button -->
-            <a href="about.html" class="inline-block bg-[#f8a8b8] hover:bg-[#f493a7] text-gray-900 font-semibold text-xs md:text-sm px-8 py-3.5 rounded-sm tracking-widest uppercase transition duration-300 shadow-md hover:shadow-lg">
-                About Me
-            </a>
-        </div>
-
-        <!-- Bottom Bar: Social Icons (Left) & Floating WhatsApp Button (Right) -->
-        <div class="flex items-center justify-between w-full pt-4">
-            <!-- Social Media Links -->
-            <div class="flex items-center gap-3">
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/khushiimakeover_official" target="_blank" class="w-10 h-10 md:w-11 md:h-11 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm flex items-center justify-center text-white hover:border-[#f8a8b8] hover:text-[#f8a8b8] transition duration-300">
-                    <i class="fa-brands fa-instagram text-lg"></i>
-                </a>
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-10 h-10 md:w-11 md:h-11 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm flex items-center justify-center text-white hover:border-[#f8a8b8] hover:text-[#f8a8b8] transition duration-300">
-                    <i class="fa-brands fa-facebook-f text-base"></i>
-                </a>
+            <!-- Right Hero Image Frame -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative max-w-sm w-full">
+                    <!-- Decorative Border Frame -->
+                    <div class="absolute -inset-2 border border-rosegold/30 rounded-3xl -rotate-2"></div>
+                    
+                    <!-- Main Hero Image -->
+                    <div class="relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 shadow-2xl">
+                        <img src="./public/bride.jpeg" 
+                             alt="Khushi Patel Bridal Model" 
+                             class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Pre-configured WhatsApp Button -->
-            <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20would%20like%20to%20inquire%20about%20your%20bridal%20makeup%20services." 
-               target="_blank" 
-               class="w-12 h-12 md:w-14 md:h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl transition duration-300 transform hover:scale-110">
-                <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
-            </a>
         </div>
     </section>
 
