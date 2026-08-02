@@ -29,6 +29,22 @@
             letter-spacing: 2px;
         }
     </style>
+
+    <!-- Sidebar Toggle Script inside Head for Fast Execution -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            if (sidebar.classList.contains('-translate-x-full')) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+    </script>
 </head>
 <body class="bg-[#0c0c0c] text-white antialiased">
 
@@ -90,18 +106,18 @@
                 <div class="lg:col-span-5 relative order-2 lg:order-1">
                     <div class="absolute -inset-2 bg-[#ea829b]/20 rounded-lg blur-xl"></div>
                     <div class="relative border border-neutral-800 p-2 bg-[#0a0a0a]">
-                        <img src="./public/janshi.png" alt="Khushi Patel Makeup Artist" class="w-full h-[520px] object-cover object-top rounded-sm shadow-2xl">
+                        <img src="./public/janshi.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1000';" alt="Khushi Patel Makeup Artist" class="w-full h-[520px] object-cover object-top rounded-sm shadow-2xl">
                     </div>
                 </div>
 
-                <!-- Right Text Content (Exact Text From Screenshot) -->
+                <!-- Right Text Content -->
                 <div class="lg:col-span-7 space-y-5 order-1 lg:order-2">
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-[1.5px] bg-[#ea829b]"></div>
                         <span class="text-[#ea829b] text-xs font-semibold tracking-[0.3em] uppercase">KHUSHI PATEL</span>
                     </div>
 
-                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl text-white uppercase font-bold leading-none whitespace-nowrap">
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl text-white uppercase font-bold leading-none">
                         MAKEUP ARTIST
                     </h1>
 
@@ -207,22 +223,6 @@
         </a>
 
     </div>
-
-    <!-- Sidebar Toggle Script -->
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('sidebarOverlay');
-            
-            if (sidebar.classList.contains('-translate-x-full')) {
-                sidebar.classList.remove('-translate-x-full');
-                overlay.classList.remove('hidden');
-            } else {
-                sidebar.classList.add('-translate-x-full');
-                overlay.classList.add('hidden');
-            }
-        }
-    </script>
 
 </body>
 </html>
