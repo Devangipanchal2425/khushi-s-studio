@@ -34,6 +34,15 @@
         .bg-accent {
             background-color: #eb9cb0;
         }
+
+        /* Hide Scrollbar for Slider */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-white antialiased text-gray-600">
@@ -92,12 +101,12 @@
         <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
 
         <!-- ==================== MAIN CONTENT AREA ==================== -->
-        <main class="flex-1 lg:ml-64 bg-white min-h-screen px-6 md:px-12 lg:px-16 pt-24 lg:pt-16 pb-16">
+        <main class="flex-1 lg:ml-64 bg-white min-h-screen px-6 md:px-12 lg:px-16 pt-24 lg:pt-16 pb-16 overflow-x-hidden">
             
             <div class="max-w-6xl mx-auto">
                 
                 <!-- Header Title & Social Icons Section -->
-                <div class="flex justify-between items-start mb-10 w-full">
+                <div class="flex justify-between items-start mb-8 w-full">
                     <div>
                         <span class="text-accent text-xs font-semibold tracking-[0.25em] uppercase block mb-1">
                             WHAT WE DO
@@ -119,37 +128,64 @@
                     </div>
                 </div>
 
-                <!-- Services Image Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full">
+                <!-- Services Slider Container -->
+                <div class="relative w-full">
                     
-                    <!-- Service Card 1 (preety.jpeg) -->
-                    <div class="relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/preety.jpeg', 'Bridal Makeover For Wedding Or Reception')">
-                        <div class="w-full h-[520px] bg-gray-100 overflow-hidden">
-                            <img src="./public/preety.jpeg" 
-                                 onerror="this.onerror=null; this.src='preety.jpeg';" 
-                                 alt="Bridal Makeover" 
-                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                    <!-- Slider Cards Track -->
+                    <div id="servicesSlider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-2">
+                        
+                        <!-- Card 1 (Bridal Makeover) -->
+                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/preety.jpeg', 'Bridal Makeover For Wedding Or Reception')">
+                            <div class="w-full h-[500px] bg-gray-100 overflow-hidden">
+                                <img src="./public/preety.jpeg" 
+                                     onerror="this.onerror=null; this.src='preety.jpeg';" 
+                                     alt="Bridal Makeover" 
+                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
+                                <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
+                                    Bridal Makeover For Wedding Or Reception
+                                </p>
+                            </div>
                         </div>
-                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
-                            <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
-                                Bridal Makeover For Wedding Or Reception
-                            </p>
+
+                        <!-- Card 2 (Pre Function) -->
+                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/d.jpeg', 'Pre Function Engagement Or Sangeet')">
+                            <div class="w-full h-[500px] bg-gray-100 overflow-hidden">
+                                <img src="./public/d.jpeg" 
+                                     onerror="this.onerror=null; this.src='d.jpeg';" 
+                                     alt="Pre Function Engagement" 
+                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
+                                <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
+                                    Pre Function Engagement Or Sangeet
+                                </p>
+                            </div>
                         </div>
+
+                        <!-- Card 3 (Sider Makeover) -->
+                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/sider.jpeg', 'Sider Makeover')">
+                            <div class="w-full h-[500px] bg-gray-100 overflow-hidden">
+                                <img src="./public/sider.jpeg" 
+                                     onerror="this.onerror=null; this.src='sider.jpeg';" 
+                                     alt="Sider Makeover" 
+                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
+                                <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
+                                    Sider Makeover
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <!-- Service Card 2 (d.jpeg) -->
-                    <div class="relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/d.jpeg', 'Pre Function Engagement Or Sangeet')">
-                        <div class="w-full h-[520px] bg-gray-100 overflow-hidden">
-                            <img src="./public/d.jpeg" 
-                                 onerror="this.onerror=null; this.src='d.jpeg';" 
-                                 alt="Pre Function Engagement" 
-                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
-                            <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
-                                Pre Function Engagement Or Sangeet
-                            </p>
-                        </div>
+                    <!-- Slider Pink Dots Navigation Indicator -->
+                    <div class="flex justify-center items-center gap-3 mt-8">
+                        <button onclick="scrollToSlide(0)" id="dot-0" class="w-3 h-3 rounded-full bg-accent transition-all duration-300 focus:outline-none"></button>
+                        <button onclick="scrollToSlide(1)" id="dot-1" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-accent transition-all duration-300 focus:outline-none"></button>
+                        <button onclick="scrollToSlide(2)" id="dot-2" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-accent transition-all duration-300 focus:outline-none"></button>
                     </div>
 
                 </div>
@@ -224,8 +260,39 @@
             }, 200);
         }
 
-        // Close on clicking outside modal content
         document.getElementById('imageModal').addEventListener('click', closePopup);
+
+        // Slider Navigation Script
+        const slider = document.getElementById('servicesSlider');
+        const dots = [document.getElementById('dot-0'), document.getElementById('dot-1'), document.getElementById('dot-2')];
+
+        function scrollToSlide(index) {
+            const cardWidth = slider.children[0].offsetWidth + 24; // width + gap
+            slider.scrollTo({
+                left: cardWidth * index,
+                behavior: 'smooth'
+            });
+            updateDots(index);
+        }
+
+        function updateDots(activeIndex) {
+            dots.forEach((dot, idx) => {
+                if (idx === activeIndex) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-accent');
+                } else {
+                    dot.classList.remove('bg-accent');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        // Auto update active dot on scroll
+        slider.addEventListener('scroll', () => {
+            const cardWidth = slider.children[0].offsetWidth + 24;
+            const activeIndex = Math.round(slider.scrollLeft / cardWidth);
+            updateDots(activeIndex);
+        });
     </script>
 </body>
 </html>
