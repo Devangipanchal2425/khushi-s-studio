@@ -1,152 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khushi Patel - About Me</title>
-    <!-- Tailwind CSS CDN -->
+    <title>About | Khushi Patel MakeUp Artist</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-serif-heading { font-family: 'Playfair Display', serif; }
+        body {
+            background-color: #0c0c0c;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-heading {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
-<body class="bg-black text-gray-800 antialiased min-h-screen">
+<body class="bg-[#0c0c0c] text-white antialiased">
 
-    <div class="flex flex-col md:flex-row min-h-screen w-full">
+    <!-- ==================== TOP 3-LINE HAMBURGER BUTTON ==================== -->
+    <button onclick="toggleSidebar()" class="fixed top-6 left-6 z-50 text-white bg-black/70 backdrop-blur-md border border-neutral-800 p-3.5 rounded-md hover:text-[#ea829b] transition shadow-2xl flex items-center gap-2 group cursor-pointer">
+        <i class="fa-solid fa-bars text-xl group-hover:scale-110 transition"></i>
+    </button>
 
-        <!-- ================= LEFT SIDEBAR (Dark Theme) ================= -->
-        <aside class="w-full md:w-64 bg-[#0d0d0d] border-r border-neutral-800 flex flex-col justify-between p-6 md:fixed md:h-screen z-40 shrink-0">
+    <div class="min-h-screen relative">
+
+        <!-- ==================== POPUP SLIDING SIDEBAR ==================== -->
+        <aside id="sidebar" class="w-64 bg-[#0a0a0a]/95 backdrop-blur-lg border-r border-neutral-900 fixed top-0 left-0 h-screen flex flex-col justify-between p-7 z-50 transition-transform duration-300 transform -translate-x-full shadow-2xl">
+            
+            <!-- Close Button (X) -->
+            <button onclick="toggleSidebar()" class="absolute top-6 right-6 text-gray-400 hover:text-[#ea829b] transition cursor-pointer">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+
             <div>
-                <!-- Pink Logo Box -->
-                <div class="bg-[#f2748e] rounded-2xl p-4 text-center mx-3 my-4 shadow-md">
-                    <a href="index.html" class="block">
-                        <img 
-                            src="./public/logo.jpeg" 
-                            alt="Khushi Makeover Logo" 
-                            class="w-full max-w-[120px] mx-auto h-auto object-contain rounded-lg"
-                        >
-                    </a>
-                </div>        
+                <!-- Pink Square Logo Box -->
+                <a href="index.html" class="inline-block mb-10 mt-6">
+                    <div class="bg-[#ea829b] text-black w-24 h-24 p-2 flex flex-col items-center justify-center text-center shadow-lg">
+                        <span class="text-3xl font-serif font-extrabold tracking-wider leading-none mb-1">KP</span>
+                        <span class="text-[8px] font-bold tracking-widest uppercase leading-tight">KHUSHI PATEL</span>
+                        <span class="text-[6px] tracking-widest uppercase mt-0.5 opacity-80">MAKE-UP ARTIST</span>
+                    </div>
+                </a>
 
                 <!-- Navigation Links -->
-                <nav class="flex flex-col gap-6 text-[11px] font-semibold tracking-[0.25em] uppercase pl-2">
-                    <a href="index.html" class="text-gray-400 hover:text-[#f8a8b8] transition">HOME</a>
-                    <a href="about.html" class="text-[#f8a8b8] font-bold">ABOUT</a>
-                    <a href="service.html" class="text-gray-400 hover:text-[#f8a8b8] transition">SERVICES</a>
-                    <a href="#portfolio" class="text-gray-400 hover:text-[#f8a8b8] transition">PORTFOLIO</a>
-                    <a href="#contact" class="text-gray-400 hover:text-[#f8a8b8] transition">CONTACT</a>
+                <nav class="space-y-4 text-[11px] font-semibold tracking-[0.2em] uppercase">
+                    <a href="index.html" class="block text-gray-400 hover:text-[#ea829b] transition py-1">HOME</a>
+                    <a href="about.html" class="block text-white hover:text-[#ea829b] transition py-1">ABOUT</a>
+                    <a href="service.html" class="block text-gray-400 hover:text-[#ea829b] transition py-1">SERVICES</a>
+                    <a href="#portfolio" class="block text-gray-400 hover:text-[#ea829b] transition py-1">PORTFOLIO</a>
+                    <a href="#blog" class="block text-gray-400 hover:text-[#ea829b] transition py-1">BLOG</a>
+                    <a href="#contact" class="block text-gray-400 hover:text-[#ea829b] transition py-1">CONTACT</a>
                 </nav>
             </div>
 
-            <!-- Bottom Social Icons in Sidebar -->
-            <div class="pt-6 border-t border-neutral-800/80 flex items-center gap-4 text-gray-400">
-                <a href="https://www.instagram.com/khushiimakeover_official" target="_blank" class="hover:text-[#f8a8b8] transition"><i class="fa-brands fa-instagram text-sm"></i></a>
-                <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="hover:text-[#f8a8b8] transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+            <!-- Sidebar Footer Socials -->
+            <div class="pt-6">
+                <div class="border-t border-neutral-800/80 w-8 mb-4"></div>
+                <div class="flex gap-4 text-xs text-gray-400 mb-3">
+                    <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="hover:text-[#ea829b] transition text-base"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="hover:text-[#ea829b] transition text-base"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+                <p class="text-[8px] text-gray-500 uppercase tracking-widest">©2026 MAKEUP ARTIST.</p>
             </div>
         </aside>
 
-        <!-- ================= MAIN CONTENT (WHITE BACKGROUND) ================= -->
-        <main class="flex-1 bg-white md:ml-64 p-6 md:p-12 min-h-screen">
-            
-            <section class="max-w-5xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-                    
-                    <!-- Left: Model / Artist Image -->
-                    <div class="lg:col-span-5">
-                        <div class="rounded-sm overflow-hidden border border-gray-100 shadow-sm aspect-[3/4] bg-gray-50">
-                        <img src="./public/janshi.jpeg" alt="Khushi Patel" class="w-full h-full object-cover object-top">                        </div>
+        <!-- Overlay Background Click to Close Sidebar -->
+        <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity"></div>
+
+        <!-- ==================== ABOUT HERO SECTION ==================== -->
+        <section class="pt-32 pb-16 px-6 lg:px-20 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Feature Image -->
+                <div class="lg:col-span-5 relative order-2 lg:order-1">
+                    <div class="absolute -inset-2 bg-[#ea829b]/20 rounded-lg blur-xl"></div>
+                    <div class="relative border border-neutral-800 p-2 bg-[#0a0a0a]">
+                        <img src="./public/janshi.png" alt="Khushi Patel Makeup Artist" class="w-full h-[520px] object-cover object-top rounded-sm shadow-2xl">
+                    </div>
+                </div>
+
+                <!-- Right Text Content (Exact Text From Screenshot) -->
+                <div class="lg:col-span-7 space-y-5 order-1 lg:order-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-[1.5px] bg-[#ea829b]"></div>
+                        <span class="text-[#ea829b] text-xs font-semibold tracking-[0.3em] uppercase">KHUSHI PATEL</span>
                     </div>
 
-                    <!-- Right: Content Column -->
-                    <div class="lg:col-span-7 flex flex-col justify-between">
-                        
-                        <!-- Header with Name & Social Icons -->
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="text-[#f8a8b8] text-[15px] font-bold tracking-[0.2em] uppercase">KHUSHI PATEL</span>
-                                <h1 class="text-3xl md:text-5xl font-serif-heading font-normal text-gray-900 tracking-tight mt-1">
-                                    MAKEUP ARTIST
-                                </h1>
-                            </div>
-                            <!-- Header Social Icons (Top Right) -->
-                            <div class="flex items-center gap-3">
-                                <a href="https://www.instagram.com/khushiimakeover_official" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-[#f8a8b8] hover:text-white transition shadow-sm">
-                                    <i class="fa-brands fa-instagram text-base"></i>
-                                </a>
-                                <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-[#f8a8b8] hover:text-white transition shadow-sm">
-                                    <i class="fa-brands fa-facebook-f text-base"></i>
-                                </a>
-                            </div>
-                        </div> <!-- FIXED: Closing header div -->
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl text-white uppercase font-bold leading-none whitespace-nowrap">
+                        MAKEUP ARTIST
+                    </h1>
 
-                        <!-- Bio Paragraphs -->
-                        <div class="space-y-4 text-gray-600 text-xs md:text-sm leading-relaxed mb-8">
-                            <p>
-                                Welcome to my creative universe of luxury bridal artistry. I am <strong class="text-gray-900 font-semibold">Khushi Patel</strong>, a high-definition makeup artist devoted to crafting timeless, ethereal, and personalized wedding transformations. My philosophy revolves around celebrating your natural elegance and enhancing the unique grace you already possess.
-                            </p>
-                            <p>
-                                Specializing in couture bridal looks, soft glam finishes, and contemporary hair sculpting, every makeover is thoughtfully designed to complement your wedding couture, personal aesthetic, and individual aura. From delicate skin-prep rituals to long-wear luxury cosmetics, every detail is seamlessly curated to ensure you look effortlessly radiant and feel truly unforgettable.
-                            </p>
-                            <p>
-                                To me, bridal makeup is far more than a technique—it is an intimate art form of capturing emotions, confidence, and joy. It is an absolute privilege to walk alongside you on your most cherished journey and make your dream bridal look come alive.
-                            </p>
+                    <!-- Paragraph 1 -->
+                    <p class="text-gray-300 text-sm leading-relaxed pt-2">
+                        Welcome to my creative universe of luxury bridal artistry. I am <strong class="text-white font-semibold">Khushi Patel</strong>, a high-definition makeup artist devoted to crafting timeless, ethereal, and personalized wedding transformations. My philosophy revolves around celebrating your natural elegance and enhancing the unique grace you already possess.
+                    </p>
+
+                    <!-- Paragraph 2 -->
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Specializing in couture bridal looks, soft glam finishes, and contemporary hair sculpting, every makeover is thoughtfully designed to complement your wedding couture, personal aesthetic, and individual aura. From delicate skin-prep rituals to long-wear luxury cosmetics, every detail is seamlessly curated to ensure you look effortlessly radiant and feel truly unforgettable.
+                    </p>
+
+                    <!-- Paragraph 3 -->
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        To me, bridal makeup is far more than a technique—it is an intimate art form of capturing emotions, confidence, and joy. It is an absolute privilege to walk alongside you on your most cherished journey and make your dream bridal look come alive.
+                    </p>
+
+                    <!-- Action Buttons & Socials -->
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="https://wa.me/919870085600?text=I%20would%20like%20to%20inquiry%20about%20your%20makeup%20and%20salon%20services" target="_blank" class="bg-[#ea829b] hover:bg-[#d97089] text-white font-medium text-xs tracking-wider px-7 py-3 transition rounded-sm uppercase">
+                            Book Appointment
+                        </a>
+                        <div class="flex items-center gap-2">
+                            <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="w-9 h-9 rounded-full bg-black/60 border border-neutral-800 hover:border-[#ea829b] text-gray-400 hover:text-[#ea829b] flex items-center justify-center text-xs transition">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-9 h-9 rounded-full bg-black/60 border border-neutral-800 hover:border-[#ea829b] text-gray-400 hover:text-[#ea829b] flex items-center justify-center text-xs transition">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
                         </div>
+                    </div>
 
-                        <!-- Highlights Section -->
-                        <div class="w-full">
-                            <h3 class="text-[11px] font-bold tracking-[0.2em] text-[#f8a8b8] uppercase mb-3">
-                                HIGHLIGHTS & SPECIALTIES
-                            </h3>
-
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full">
-                                <!-- Card 1 -->
-                                <div class="bg-white border border-gray-100 p-3 rounded-sm text-center shadow-sm hover:shadow transition">
-                                    <i class="fa-solid fa-crown text-amber-400 text-base mb-1.5"></i>
-                                    <h4 class="text-[9px] font-bold text-gray-900 tracking-wider uppercase">LUXURY BRIDAL</h4>
-                                    <p class="text-[7px] text-gray-400 uppercase mt-0.5">COUTURE LOOKS</p>
-                                </div>
-
-                                <!-- Card 2 -->
-                                <div class="bg-white border border-gray-100 p-3 rounded-sm text-center shadow-sm hover:shadow transition">
-                                    <i class="fa-solid fa-wand-magic-sparkles text-rose-400 text-base mb-1.5"></i>
-                                    <h4 class="text-[9px] font-bold text-gray-900 tracking-wider uppercase">ULTRA HD SKIN</h4>
-                                    <p class="text-[7px] text-gray-400 uppercase mt-0.5">CAMERA READY</p>
-                                </div>
-
-                                <!-- Card 3 -->
-                                <div class="bg-white border border-gray-100 p-3 rounded-sm text-center shadow-sm hover:shadow transition">
-                                    <i class="fa-solid fa-gem text-sky-400 text-base mb-1.5"></i>
-                                    <h4 class="text-[9px] font-bold text-gray-900 tracking-wider uppercase">PREMIUM PRODUCTS</h4>
-                                    <p class="text-[7px] text-gray-400 uppercase mt-0.5">GLOBAL BRANDS</p>
-                                </div>
-
-                                <!-- Card 4 -->
-                                <div class="bg-white border border-gray-100 p-3 rounded-sm text-center shadow-sm hover:shadow transition">
-                                    <i class="fa-solid fa-hand-holding-heart text-pink-400 text-base mb-1.5"></i>
-                                    <h4 class="text-[9px] font-bold text-gray-900 tracking-wider uppercase">CUSTOM GLAM</h4>
-                                    <p class="text-[7px] text-gray-400 uppercase mt-0.5">TAILORED BEAUTY</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> <!-- FIXED: Closing right column div -->
                 </div>
-            </section>
 
-        </main>
+            </div>
+        </section>
 
-        <!-- Pre-configured Floating WhatsApp Button -->
-        <a href="https://wa.me/919870085600?text=Hello%20Khushi,%20I%20would%20like%20to%20inquire%20about%20your%20bridal%20makeup%20services." 
-           target="_blank" 
-           class="fixed bottom-6 right-6 w-12 h-12 md:w-14 md:h-14 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-2xl transition duration-300 transform hover:scale-110 z-50">
-            <i class="fa-brands fa-whatsapp text-2xl md:text-3xl"></i>
+        <!-- ==================== HIGHLIGHTS & SPECIALTIES ==================== -->
+        <section class="py-16 bg-[#080808] border-y border-neutral-900">
+            <div class="max-w-7xl mx-auto px-6 lg:px-20">
+                
+                <div class="mb-10">
+                    <span class="text-[#ea829b] text-xs font-semibold tracking-[0.3em] uppercase">OUR FEATURES</span>
+                    <h2 class="font-heading text-2xl lg:text-3xl text-white uppercase font-bold mt-1">HIGHLIGHTS & SPECIALTIES</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-[#0f0f0f] p-6 border border-neutral-800 hover:border-[#ea829b] transition text-center group">
+                        <div class="text-[#ea829b] text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <h3 class="font-heading text-sm text-white uppercase font-semibold">LUXURY BRIDAL</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">Couture Looks</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-[#0f0f0f] p-6 border border-neutral-800 hover:border-[#ea829b] transition text-center group">
+                        <div class="text-[#ea829b] text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-heading text-sm text-white uppercase font-semibold">ULTRA HD SKIN</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">Camera Ready</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-[#0f0f0f] p-6 border border-neutral-800 hover:border-[#ea829b] transition text-center group">
+                        <div class="text-[#ea829b] text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="font-heading text-sm text-white uppercase font-semibold">PREMIUM PRODUCTS</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">Global Brands</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-[#0f0f0f] p-6 border border-neutral-800 hover:border-[#ea829b] transition text-center group">
+                        <div class="text-[#ea829b] text-2xl mb-3 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="font-heading text-sm text-white uppercase font-semibold">CUSTOM GLAM</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-wider mt-1">Tailored Beauty</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="bg-[#080808] border-t border-neutral-900 py-8 text-center">
+            <div class="flex justify-center gap-6 text-lg text-gray-400 mb-4">
+                <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="hover:text-[#ea829b] transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="hover:text-[#ea829b] transition"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest">©2026 KHUSHI PATEL MAKEUP ARTIST. ALL RIGHTS RESERVED.</p>
+        </footer>
+
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/919870085600?text=I%20would%20like%20to%20inquiry%20about%20your%20makeup%20and%20salon%20services" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20ba5a] text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-2xl z-50 transition transform hover:scale-105">
+            <i class="fa-brands fa-whatsapp"></i>
         </a>
 
     </div>
+
+    <!-- Sidebar Toggle Script -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            if (sidebar.classList.contains('-translate-x-full')) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+    </script>
 
 </body>
 </html>
