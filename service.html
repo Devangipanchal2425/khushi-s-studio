@@ -485,26 +485,27 @@
     }
   };
 
-  function openCatGallery(category) {
-    const data = categoryData[category];
-    if (!data) return;
+function openCatGallery(category) {
+  const data = categoryData[category];
+  if (!data) return;
 
-    document.getElementById('catModalTitle').innerText = data.title;
-    const grid = document.getElementById('catPopupGrid');
-    grid.innerHTML = '';
+  document.getElementById('catModalTitle').innerText = data.title;
+  const grid = document.getElementById('catPopupGrid');
+  grid.innerHTML = '';
 
-    data.images.forEach(item => {
-      grid.innerHTML += `
-        <div class="cat-popup-item">
-          <img src="${item.url}" alt="${item.label}">
-          <div class="cat-img-tag">${item.label}</div>
-        </div>
-      `;
-    });
+  data.images.forEach(item => {
+    // Agar item sirf string URL hai ya object hai, dono handle karega
+    const imageUrl = typeof item === 'string' ? item : item.url;
+    
+    grid.innerHTML += `
+      <div class="cat-popup-item">
+        <img src="${imageUrl}" alt="Gallery Image">
+      </div>
+    `;
+  });
 
-    document.getElementById('catGalleryModal').style.display = 'flex';
-  }
-
+  document.getElementById('catGalleryModal').style.display = 'flex';
+}
   function closeCatGallery() {
     document.getElementById('catGalleryModal').style.display = 'none';
   }
