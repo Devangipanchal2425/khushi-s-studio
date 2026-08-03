@@ -46,18 +46,18 @@
 
         <!-- ==================== MOBILE HEADER BAR (FIXED SPACING & PADDING) ==================== -->
         <!-- Note: Edge padding set to px-6 py-3 for luxury spacing -->
-        <div class="lg:hidden fixed top-0 left-0 w-full bg-black text-white z-40 px-6 py-3 flex justify-between items-center shadow-md">
+<div class="lg:hidden fixed top-0 left-0 w-full bg-black text-white z-40 px-6 py-3 flex flex-row-reverse justify-between items-center shadow-md">            
             
-            <!-- Logo Box -->
-            <a href="index.html" class="bg-[#faf9f6] p-1 w-11 h-11 flex items-center justify-center shadow-sm rounded-sm">
+       <!-- Logo Box -->
+    
+        <a href="index.html" class="bg-[#faf9f6] p-1 w-11 h-11 flex items-center justify-center shadow-sm rounded-sm">
                 <img src="./public/logo.jpeg" onerror="this.onerror=null; this.src='logo.jpeg';" alt="Khushi Makeover Logo" class="w-full h-full object-contain mix-blend-multiply">
             </a>
-
+    
             <!-- Menu Button (3 Lines Icon) -->
-            <button onclick="toggleSidebar()" class="text-2xl text-white focus:outline-none p-2 hover:text-accent transition">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
+            <button onclick="toggleSidebar()" class="text-2xl text-white focus:outline-none p-1 hover:text-accent transition">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             <!-- TRICK: Agar aap Hamburger Icon (3 lines) Left me aur Logo Right me chahte hain, toh upar wali line ko aise replace kar dein: -->
             <!-- <div class="lg:hidden fixed top-0 left-0 w-full bg-black text-white z-40 px-6 py-3 flex flex-row-reverse justify-between items-center shadow-md"> -->
         </div>
