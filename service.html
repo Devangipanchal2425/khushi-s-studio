@@ -19,8 +19,8 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
-            color: #555555;
+            background-color: #faf9f6;
+            color: #444444;
         }
 
         .font-heading {
@@ -45,7 +45,7 @@
         }
     </style>
 </head>
-<body class="bg-white antialiased text-gray-600">
+<body class="bg-[#faf9f6] antialiased text-gray-700">
 
     <div class="flex min-h-screen relative">
 
@@ -101,12 +101,12 @@
         <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
 
         <!-- ==================== MAIN CONTENT AREA ==================== -->
-        <main class="flex-1 lg:ml-64 bg-white min-h-screen px-6 md:px-12 lg:px-16 pt-24 lg:pt-16 pb-16 overflow-x-hidden">
+        <main class="flex-1 lg:ml-64 bg-[#faf9f6] min-h-screen px-6 md:px-12 lg:px-16 pt-24 lg:pt-12 pb-16 overflow-x-hidden">
             
             <div class="max-w-6xl mx-auto">
                 
-                <!-- Header Title & Social Icons Section -->
-                <div class="flex justify-between items-start mb-8 w-full">
+                <!-- Header Title Section -->
+                <div class="flex justify-between items-end mb-10 border-b border-gray-200 pb-6">
                     <div>
                         <span class="text-accent text-xs font-semibold tracking-[0.25em] uppercase block mb-1">
                             WHAT WE DO
@@ -114,393 +114,234 @@
                         <h1 class="font-heading text-3xl md:text-5xl text-black uppercase font-bold tracking-wider">
                             MAKEUP SERVICES
                         </h1>
-                        <div class="w-16 h-[2px] bg-accent mt-3"></div>
                     </div>
 
-                    <!-- Top-Right Larger Social Circle Icons -->
+                    <!-- Top-Right Social Icons -->
                     <div class="flex gap-3 items-center">
-                        <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 text-black flex items-center justify-center text-base hover:bg-black hover:text-white transition shadow-sm">
+                        <a href="https://instagram.com/khushiimakeover_official" target="_blank" class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center text-base hover:bg-black hover:text-white transition shadow-sm border border-gray-200">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 text-black flex items-center justify-center text-base hover:bg-black hover:text-white transition shadow-sm">
+                        <a href="https://www.facebook.com/share/18wh4hPmkN/" target="_blank" class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center text-base hover:bg-black hover:text-white transition shadow-sm border border-gray-200">
                             <i class="fa-brands fa-facebook-f"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Services Slider Container -->
-                <div class="relative w-full">
-                    
+                <!-- ==================== 1. SIGNATURE MAKEUP SLIDER ==================== -->
+                <div class="relative w-full mb-16">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="font-heading text-xl md:text-2xl text-black uppercase font-bold tracking-wider">
+                            ✨ Signature Makeover Looks
+                        </h2>
+                        <span class="text-xs text-gray-400 tracking-wider hidden sm:block">Swipe to view more &rarr;</span>
+                    </div>
+
                     <!-- Slider Cards Track -->
                     <div id="servicesSlider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-2">
                         
                         <!-- Card 1 (Bridal Makeover) -->
-                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/preety.jpeg', 'Bridal Makeover For Wedding Or Reception')">
-                            <div class="w-full h-[500px] bg-gray-100 overflow-hidden">
-                                <img src="./public/preety.jpeg" 
-                                     onerror="this.onerror=null; this.src='preety.jpeg';" 
-                                     alt="Bridal Makeover" 
-                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden rounded-xl shadow-md bg-white border border-gray-100" onclick="openPopup('./public/preety.jpeg', 'Bridal Makeover For Wedding Or Reception')">
+                            <div class="w-full h-[420px] overflow-hidden relative">
+                                <img src="./public/preety.jpeg" onerror="this.onerror=null; this.src='preety.jpeg';" alt="Bridal Makeover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-white text-[11px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Top Rated</span>
                             </div>
-                            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
-                                <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
-                                    Bridal Makeover For Wedding Or Reception
-                                </p>
+                            <div class="p-5 text-center bg-white">
+                                <h3 class="text-gray-900 font-bold text-lg tracking-wide">Bridal Makeover</h3>
+                                <p class="text-xs text-gray-500 mt-1">For Wedding, Reception & Royal Bridal Look</p>
+                                <span class="inline-block mt-3 text-xs font-semibold text-accent uppercase tracking-widest border-b border-accent pb-0.5">Click to view full image</span>
                             </div>
                         </div>
 
                         <!-- Card 2 (Pre Function) -->
-                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/d.jpeg', 'Pre Function Engagement Or Sangeet')">
-                            <div class="w-full h-[500px] bg-gray-100 overflow-hidden">
-                                <img src="./public/d.jpeg" 
-                                     onerror="this.onerror=null; this.src='d.jpeg';" 
-                                     alt="Pre Function Engagement" 
-                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden rounded-xl shadow-md bg-white border border-gray-100" onclick="openPopup('./public/d.jpeg', 'Pre Function Engagement Or Sangeet')">
+                            <div class="w-full h-[420px] overflow-hidden relative">
+                                <img src="./public/d.jpeg" onerror="this.onerror=null; this.src='d.jpeg';" alt="Pre Function Engagement" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-accent text-white text-[11px] uppercase tracking-widest px-3 py-1 rounded-full font-medium">Popular</span>
                             </div>
-                            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
-                                <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
-                                    Pre Function Engagement Or Sangeet
-                                </p>
+                            <div class="p-5 text-center bg-white">
+                                <h3 class="text-gray-900 font-bold text-lg tracking-wide">Engagement & Sangeet</h3>
+                                <p class="text-xs text-gray-500 mt-1">HD Glowy Glam for Pre-Wedding Events</p>
+                                <span class="inline-block mt-3 text-xs font-semibold text-accent uppercase tracking-widest border-b border-accent pb-0.5">Click to view full image</span>
                             </div>
                         </div>
 
                         <!-- Card 3 (Sider Makeover) -->
-                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden shadow-sm" onclick="openPopup('./public/sider.jpeg', 'Sider Makeover')">
-                            <div class="w-full h-[500px] bg-gray-100 overflow-hidden">
-                                <img src="./public/sider.jpeg" 
-                                     onerror="this.onerror=null; this.src='sider.jpeg';" 
-                                     alt="Sider Makeover" 
-                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+                        <div class="snap-start min-w-[100%] md:min-w-[calc(50%-12px)] flex-shrink-0 relative group cursor-pointer overflow-hidden rounded-xl shadow-md bg-white border border-gray-100" onclick="openPopup('./public/sider.jpeg', 'Sider Makeover')">
+                            <div class="w-full h-[420px] overflow-hidden relative">
+                                <img src="./public/sider.jpeg" onerror="this.onerror=null; this.src='sider.jpeg';" alt="Sider Makeover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             </div>
-                            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 w-[88%] text-center shadow-md">
-                                <p class="text-gray-800 font-medium text-sm md:text-base tracking-wide">
-                                    Sider Makeover
-                                </p>
+                            <div class="p-5 text-center bg-white">
+                                <h3 class="text-gray-900 font-bold text-lg tracking-wide">Party & Sider Makeover</h3>
+                                <p class="text-xs text-gray-500 mt-1">Elegantly Styled Look for Bridesmaids & Guests</p>
+                                <span class="inline-block mt-3 text-xs font-semibold text-accent uppercase tracking-widest border-b border-accent pb-0.5">Click to view full image</span>
                             </div>
                         </div>
 
                     </div>
 
-                    <!-- Slider Pink Dots Navigation Indicator -->
-                    <div class="flex justify-center items-center gap-3 mt-8">
+                    <!-- Slider Pink Dots Navigation -->
+                    <div class="flex justify-center items-center gap-3 mt-6">
                         <button onclick="scrollToSlide(0)" id="dot-0" class="w-3 h-3 rounded-full bg-accent transition-all duration-300 focus:outline-none"></button>
                         <button onclick="scrollToSlide(1)" id="dot-1" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-accent transition-all duration-300 focus:outline-none"></button>
                         <button onclick="scrollToSlide(2)" id="dot-2" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-accent transition-all duration-300 focus:outline-none"></button>
                     </div>
 
-                    <!-- ======================================================= -->
-<!-- START: Interactive Category Cards Section (Add after Makeup Services) -->
-<!-- ======================================================= -->
+                </div>
 
-<style>
-  /* Salon Other Services Section Styles */
-  .other-services-section {
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid #eee;
-  }
+                <!-- ==================== 2. SALON & BEAUTY CARDS (FULL RICH DESIGN) ==================== -->
+                <div class="pt-8">
+                    <div class="mb-8">
+                        <span class="text-accent text-xs font-semibold tracking-[0.25em] uppercase block mb-1">
+                            PREMIUM CARE
+                        </span>
+                        <h2 class="font-heading text-2xl md:text-4xl text-black uppercase font-bold tracking-wider">
+                            SALON & BEAUTY SERVICES
+                        </h2>
+                    </div>
 
-  .other-services-section .section-subtitle {
-    color: #e8a598; /* Matching website light pink accent */
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
+                    <!-- 2x2 Grid Layout for perfectly balanced desktop & mobile view -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        
+                        <!-- CARD 1: NAIL EXTENSIONS -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" alt="Nail Extensions" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">💅 Luxury Nails</span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-gray-900 font-bold text-xl">Nail Extensions & Art</h3>
+                                        <span class="text-sm font-bold text-accent">Starts ₹999</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 leading-relaxed mb-4">Transform your nails with custom shapes, gel overlays, french tips, and long-lasting trendy nail art.</p>
+                                    
+                                    <ul class="text-xs text-gray-600 space-y-2 mb-6 border-t border-gray-100 pt-4">
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Gel & Acrylic Extensions</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Custom 3D Nail Art & Chrome Finish</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Chip-Resistant High Shine Coating</li>
+                                    </ul>
+                                </div>
 
-  .other-services-section .section-title {
-    font-family: 'Oswald', 'Montserrat', sans-serif;
-    font-size: 2.2rem;
-    color: #000;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-  }
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openCategoryGallery('nails')" class="flex-1 py-2.5 px-4 rounded-lg bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-xs font-semibold tracking-wider uppercase transition text-center">
+                                        <i class="fa-regular fa-images mr-1"></i> Gallery
+                                    </button>
+                                    <a href="https://wa.me/919870085600?text=Hi%20Khushi,%20I%20want%20to%20book%20Nail%20Extensions" target="_blank" class="flex-1 py-2.5 px-4 rounded-lg bg-accent hover:opacity-90 text-white text-xs font-semibold tracking-wider uppercase transition text-center shadow-sm">
+                                        Book Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-  /* Grid Layout for 4 Cards */
-  .category-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-  }
+                        <!-- CARD 2: KOREAN HAIR SPA -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=80" alt="Korean Hair Spa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-accent text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">💆‍♀️ Trending Therapy</span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-gray-900 font-bold text-xl">Korean Scalp & Hair Spa</h3>
+                                        <span class="text-sm font-bold text-accent">Starts ₹1,499</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 leading-relaxed mb-4">Deep head detox massage with waterfall hydro-steam therapy to nourish roots and eliminate dandruff.</p>
+                                    
+                                    <ul class="text-xs text-gray-600 space-y-2 mb-6 border-t border-gray-100 pt-4">
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Waterfall Head Shower Detox</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Scalp Scrubbing & Deep Hydration</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Relieves Stress & Boosts Hair Growth</li>
+                                    </ul>
+                                </div>
 
-  .cat-card {
-    position: relative;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openCategoryGallery('koreanSpa')" class="flex-1 py-2.5 px-4 rounded-lg bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-xs font-semibold tracking-wider uppercase transition text-center">
+                                        <i class="fa-regular fa-images mr-1"></i> Gallery
+                                    </button>
+                                    <a href="https://wa.me/919870085600?text=Hi%20Khushi,%20I%20want%20to%20book%20Korean%20Hair%20Spa" target="_blank" class="flex-1 py-2.5 px-4 rounded-lg bg-accent hover:opacity-90 text-white text-xs font-semibold tracking-wider uppercase transition text-center shadow-sm">
+                                        Book Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-  .cat-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-  }
+                        <!-- CARD 3: ADVANCED HAIR TREATMENTS -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Hair Treatments" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">💇‍♀️ Silky Hair</span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-gray-900 font-bold text-xl">Keratin & Botox Treatments</h3>
+                                        <span class="text-sm font-bold text-accent">Starts ₹2,999</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 leading-relaxed mb-4">Say goodbye to dry, frizzy hair with our premium Keratin smoothing, Hair Botox, and Balayage colors.</p>
+                                    
+                                    <ul class="text-xs text-gray-600 space-y-2 mb-6 border-t border-gray-100 pt-4">
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Formaldehyde-Free Keratin Smoothing</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Deep Fiber Hair Botox Repair</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Global Hair Color & Highlights</li>
+                                    </ul>
+                                </div>
 
-  .cat-card-img {
-    position: relative;
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-  }
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openCategoryGallery('hairTreatments')" class="flex-1 py-2.5 px-4 rounded-lg bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-xs font-semibold tracking-wider uppercase transition text-center">
+                                        <i class="fa-regular fa-images mr-1"></i> Gallery
+                                    </button>
+                                    <a href="https://wa.me/919870085600?text=Hi%20Khushi,%20I%20want%20to%20book%20Hair%20Treatment" target="_blank" class="flex-1 py-2.5 px-4 rounded-lg bg-accent hover:opacity-90 text-white text-xs font-semibold tracking-wider uppercase transition text-center shadow-sm">
+                                        Book Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-  .cat-card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
+                        <!-- CARD 4: SKIN CARE & FACIALS -->
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Skin Care" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute top-4 left-4 bg-accent text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">🌿 Instant Glow</span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-gray-900 font-bold text-xl">Glass Skin & Hydra Facials</h3>
+                                        <span class="text-sm font-bold text-accent">Starts ₹1,299</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500 leading-relaxed mb-4">Advanced dermatological facials designed to clear pores, restore hydration, and give natural radiance.</p>
+                                    
+                                    <ul class="text-xs text-gray-600 space-y-2 mb-6 border-t border-gray-100 pt-4">
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> 7-in-1 Hydro Dermabrasion Facial</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Korean Glass Skin Glow Boosting</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent text-xs"></i> Organic Anti-Tan & Skin Brightening</li>
+                                    </ul>
+                                </div>
 
-  .cat-card:hover .cat-card-img img {
-    transform: scale(1.08);
-  }
+                                <div class="flex items-center gap-3">
+                                    <button onclick="openCategoryGallery('skinCare')" class="flex-1 py-2.5 px-4 rounded-lg bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-xs font-semibold tracking-wider uppercase transition text-center">
+                                        <i class="fa-regular fa-images mr-1"></i> Gallery
+                                    </button>
+                                    <a href="https://wa.me/919870085600?text=Hi%20Khushi,%20I%20want%20to%20book%20Skin%20Care%20Facial" target="_blank" class="flex-1 py-2.5 px-4 rounded-lg bg-accent hover:opacity-90 text-white text-xs font-semibold tracking-wider uppercase transition text-center shadow-sm">
+                                        Book Now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-  .cat-card-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-    padding: 20px;
-    color: #fff;
-    text-align: center;
-  }
+                    </div>
+                </div>
 
-  .cat-card-overlay h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    letter-spacing: 0.5px;
-  }
-
-  .cat-card-overlay span {
-    font-size: 0.85rem;
-    color: #e8a598;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-
-  /* Modal Gallery Popup Styles */
-  .cat-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.88);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-    padding: 20px;
-    backdrop-filter: blur(4px);
-  }
-
-  .cat-modal-box {
-    background: #fff;
-    border-radius: 12px;
-    max-width: 900px;
-    width: 100%;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 30px;
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  }
-
-  .cat-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 32px;
-    color: #333;
-    border: none;
-    background: none;
-    cursor: pointer;
-    line-height: 1;
-  }
-
-  .cat-modal-title {
-    font-size: 1.6rem;
-    color: #111;
-    margin-bottom: 25px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .cat-popup-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-  }
-
-  .cat-popup-item {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 220px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-  .cat-popup-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .cat-popup-item .cat-img-tag {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    padding: 8px;
-    font-size: 0.8rem;
-    text-align: center;
-  }
-</style>
-
-<div class="other-services-section">
-  <div class="section-subtitle">EXPLORE MORE</div>
-  <h2 class="section-title">SALON & BEAUTY SERVICES</h2>
-
-  <!-- Cards Grid -->
-  <div class="category-cards-grid">
-    
-    <!-- CARD 1: NAIL EXTENSIONS -->
-    <div class="cat-card" onclick="openCatGallery('nails')">
-      <div class="cat-card-img">
-        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Nail Extensions">
-        <div class="cat-card-overlay">
-          <h3>💅 Nail Extensions</h3>
-          <span>Click to View Designs</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 2: KOREAN HAIR SPA -->
-    <div class="cat-card" onclick="openCatGallery('koreanSpa')">
-      <div class="cat-card-img">
-        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80" alt="Korean Hair Spa">
-        <div class="cat-card-overlay">
-          <h3>💆‍♀️ Korean Scalp & Hair Spa</h3>
-          <span>Click to View Therapy</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 3: ADVANCED HAIR TREATMENTS -->
-    <div class="cat-card" onclick="openCatGallery('hairTreatments')">
-      <div class="cat-card-img">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Hair Treatments">
-        <div class="cat-card-overlay">
-          <h3>💇‍♀️ Hair Treatments</h3>
-          <span>Keratin, Botox & Color</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 4: SKIN CARE & FACIALS -->
-    <div class="cat-card" onclick="openCatGallery('skinCare')">
-      <div class="cat-card-img">
-        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Skin Care">
-        <div class="cat-card-overlay">
-          <h3>🌿 Skin Care & Facials</h3>
-          <span>Glass Skin & Hydra Boost</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- Modal Popup for Gallery -->
-<div class="cat-modal-overlay" id="catGalleryModal">
-  <div class="cat-modal-box">
-    <button class="cat-close-btn" onclick="closeCatGallery()">&times;</button>
-    <h3 class="cat-modal-title" id="catModalTitle">Gallery</h3>
-    <div class="cat-popup-grid" id="catPopupGrid">
-      <!-- Images loaded via JS -->
-    </div>
-  </div>
-</div>
-
-<!-- Gallery Data & JavaScript -->
-<script>
-  const categoryData = {
-    nails: {
-      title: "💅 Nail Extensions & Art Collection",
-      images: [
-        { url: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600", label: "Gel Acrylic Extensions" },
-        { url: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600", label: "French Tip Nail Art" },
-        { url: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600", label: "Glitter & Ombre Nails" }
-      ]
-    },
-    koreanSpa: {
-      title: "💆‍♀️ Korean Scalp Detox & Waterfall Spa",
-      images: [
-        { url: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600", label: "Waterfall Scalp Cleansing" },
-        { url: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600", label: "Steam Therapy & Moisture Lock" }
-      ]
-    },
-    hairTreatments: {
-      title: "💇‍♀️ Keratin, Hair Botox & Color Results",
-      images: [
-        { url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600", label: "Smooth Keratin Finish" },
-        { url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600", label: "Balayage Highlights" }
-      ]
-    },
-    skinCare: {
-      title: "🌿 Korean Glass Skin & Hydra Facial",
-      images: [
-        { url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600", label: "Glass Skin Glow Treatment" },
-        { url: "https://images.unsplash.com/photo-1512290900673-700200411789?w=600", label: "Hydra Facial Deep Cleansing" }
-      ]
-    }
-  };
-
-  function openCatGallery(category) {
-    const data = categoryData[category];
-    if (!data) return;
-
-    document.getElementById('catModalTitle').innerText = data.title;
-    const grid = document.getElementById('catPopupGrid');
-    grid.innerHTML = '';
-
-    data.images.forEach(item => {
-      grid.innerHTML += `
-        <div class="cat-popup-item">
-          <img src="${item.url}" alt="${item.label}">
-          <div class="cat-img-tag">${item.label}</div>
-        </div>
-      `;
-    });
-
-    document.getElementById('catGalleryModal').style.display = 'flex';
-  }
-
-  function closeCatGallery() {
-    document.getElementById('catGalleryModal').style.display = 'none';
-  }
-
-  // Close when clicking outside content box
-  window.addEventListener('click', function(e) {
-    const modal = document.getElementById('catGalleryModal');
-    if (e.target === modal) {
-      closeCatGallery();
-    }
-  });
-</script>
-
-<!-- ======================================================= -->
-<!-- END: Interactive Category Cards Section -->
-<!-- ======================================================= -->
-
+                <!-- Call to Action Banner -->
+                <div class="mt-16 bg-black text-white p-8 md:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                    <div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold tracking-wider uppercase">Need A Customized Beauty Package?</h3>
+                        <p class="text-gray-400 text-xs md:text-sm mt-1">Get customized bridal and group discounts for special occasions.</p>
+                    </div>
+                    <a href="https://wa.me/919870085600?text=Hi%20Khushi,%20I%20need%20a%20customized%20beauty%20package" target="_blank" class="bg-accent text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition shadow-md whitespace-nowrap">
+                        Chat on WhatsApp
+                    </a>
                 </div>
 
             </div>
@@ -521,16 +362,28 @@
 
     <!-- ==================== IMAGE POPUP / LIGHTBOX MODAL ==================== -->
     <div id="imageModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300">
-        <!-- Close Button -->
         <button onclick="closePopup()" class="absolute top-5 right-5 text-white text-3xl hover:text-accent transition z-50">
             <i class="fa-solid fa-xmark"></i>
         </button>
 
-        <!-- Popup Box Container -->
-        <div class="relative max-w-3xl w-full bg-white rounded-sm overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="modalContainer" onclick="event.stopPropagation()">
+        <div class="relative max-w-3xl w-full bg-white rounded-md overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="modalContainer" onclick="event.stopPropagation()">
             <img id="popupImage" src="" alt="Popup View" class="w-full max-h-[75vh] object-contain bg-black">
             <div class="p-4 text-center bg-white border-t">
                 <p id="popupCaption" class="text-gray-800 font-medium text-base md:text-lg"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CATEGORY GALLERY MULTI-IMAGE POPUP ==================== -->
+    <div id="categoryModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <button onclick="closeCategoryGallery()" class="absolute top-5 right-5 text-white text-3xl hover:text-accent transition z-50">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="relative max-w-4xl w-full bg-white rounded-2xl p-6 max-h-[85vh] overflow-y-auto shadow-2xl" onclick="event.stopPropagation()">
+            <h3 id="catModalTitle" class="font-heading text-2xl text-black uppercase font-bold tracking-wider text-center mb-6 border-b pb-3"></h3>
+            <div id="catModalGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Images load via JS -->
             </div>
         </div>
     </div>
@@ -544,7 +397,7 @@
             overlay.classList.toggle('hidden');
         }
 
-        // Popup Functions
+        // Single Image Popup Functions
         function openPopup(imageSrc, captionText) {
             const modal = document.getElementById('imageModal');
             const popupImage = document.getElementById('popupImage');
@@ -580,7 +433,7 @@
         const dots = [document.getElementById('dot-0'), document.getElementById('dot-1'), document.getElementById('dot-2')];
 
         function scrollToSlide(index) {
-            const cardWidth = slider.children[0].offsetWidth + 24; // width + gap
+            const cardWidth = slider.children[0].offsetWidth + 24;
             slider.scrollTo({
                 left: cardWidth * index,
                 behavior: 'smooth'
@@ -600,12 +453,70 @@
             });
         }
 
-        // Auto update active dot on scroll
         slider.addEventListener('scroll', () => {
             const cardWidth = slider.children[0].offsetWidth + 24;
             const activeIndex = Math.round(slider.scrollLeft / cardWidth);
             updateDots(activeIndex);
         });
+
+        // Multi-Image Category Gallery Data & Popup
+        const categoryGalleryData = {
+            nails: {
+                title: "💅 Nail Extensions & Art Collection",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600", label: "Gel Acrylic Extensions" },
+                    { url: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600", label: "French Tip Nail Art" },
+                    { url: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600", label: "Glitter & Ombre Nails" }
+                ]
+            },
+            koreanSpa: {
+                title: "💆‍♀️ Korean Scalp Detox & Waterfall Spa",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600", label: "Waterfall Scalp Cleansing" },
+                    { url: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600", label: "Steam Therapy & Moisture Lock" }
+                ]
+            },
+            hairTreatments: {
+                title: "💇‍♀️ Keratin, Hair Botox & Color Results",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600", label: "Smooth Keratin Finish" },
+                    { url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600", label: "Balayage Highlights" }
+                ]
+            },
+            skinCare: {
+                title: "🌿 Korean Glass Skin & Hydra Facial",
+                images: [
+                    { url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600", label: "Glass Skin Glow Treatment" },
+                    { url: "https://images.unsplash.com/photo-1512290900673-700200411789?w=600", label: "Hydra Facial Deep Cleansing" }
+                ]
+            }
+        };
+
+        function openCategoryGallery(catKey) {
+            const data = categoryGalleryData[catKey];
+            if(!data) return;
+
+            document.getElementById('catModalTitle').innerText = data.title;
+            const grid = document.getElementById('catModalGrid');
+            grid.innerHTML = '';
+
+            data.images.forEach(img => {
+                grid.innerHTML += `
+                    <div class="relative rounded-lg overflow-hidden shadow group h-52">
+                        <img src="${img.url}" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 inset-x-0 bg-black/75 text-white text-xs p-2 text-center">${img.label}</div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('categoryModal').classList.remove('hidden');
+        }
+
+        function closeCategoryGallery() {
+            document.getElementById('categoryModal').classList.add('hidden');
+        }
+
+        document.getElementById('categoryModal').addEventListener('click', closeCategoryGallery);
     </script>
 </body>
 </html>
