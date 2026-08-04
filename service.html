@@ -486,7 +486,7 @@
   }; // Object ends here
 
   // Card Click Function - Modal Kholne Ke Liye
-  function openCatGallery(categoryKey) {
+function openCatGallery(categoryKey) {
     const data = categoryData[categoryKey];
     if (!data) return;
 
@@ -494,49 +494,23 @@
     const titleElem = document.getElementById('catModalTitle');
     if (titleElem) titleElem.innerText = data.title;
 
-    // Grid Container Clear and Fill
+    // Clear and Populate Grid with Images Only
     const grid = document.getElementById('catPopupGrid');
     if (grid) {
       grid.innerHTML = ''; 
 
       data.images.forEach(item => {
-        const imageUrl = item.url || item;
-        const itemName = item.name || item.label || 'Service';
-        const itemPrice = item.price ? `<p class="text-[#eb9cb0] font-bold text-lg my-1">${item.price}</p>` : '';
-        const itemBadge = item.badge ? `<span class="absolute top-2 left-2 bg-black text-white text-[10px] font-bold px-2 py-1 rounded tracking-widest uppercase shadow z-10">${item.badge}</span>` : '';
-
-        // Encoded WhatsApp Text
-        const waText = encodeURIComponent(`Hi Khushi, I would like to book an appointment for ${itemName}${item.price ? ' (' + item.price + ')' : ''}.`);
+        const imageUrl = typeof item === 'string' ? item : item.url;
 
         grid.innerHTML += `
-          <div class="group relative bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-            
-            <!-- Image Area -->
-            <div class="relative w-full h-48 sm:h-56 overflow-hidden bg-gray-50">
-              <img src="${imageUrl}" alt="${itemName}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-              ${itemBadge}
-            </div>
-
-            <!-- Content Area -->
-            <div class="p-4 flex flex-col justify-between flex-grow text-center">
-              <div>
-                <h4 class="font-bold text-gray-800 text-sm md:text-base tracking-wide">${itemName}</h4>
-                ${itemPrice}
-              </div>
-              
-              <!-- Booking Button -->
-              <a href="https://wa.me/919870085600?text=${waText}" target="_blank" 
-                 class="mt-3 inline-block w-full py-2 bg-black hover:bg-[#eb9cb0] text-white font-semibold text-xs rounded transition-colors duration-200 uppercase tracking-widest">
-                 Book Service
-              </a>
-            </div>
-
+          <div class="rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300">
+            <img src="${imageUrl}" alt="Gallery Image" class="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-500">
           </div>
         `;
       });
     }
 
-    // Modal ko Dikhana
+    // Show Modal
     const modal = document.getElementById('catGalleryModal');
     if (modal) {
       modal.style.display = 'flex';
@@ -544,7 +518,7 @@
     }
   }
 
-  // Modal Band Karne Ke Liye Function
+  // Close Modal Function
   function closeCatGallery() {
     const modal = document.getElementById('catGalleryModal');
     if (modal) {
@@ -552,8 +526,7 @@
       modal.classList.add('hidden');
     }
   }
-</script>
-            </div>
+</script>            </div>
 
             </div>
 
