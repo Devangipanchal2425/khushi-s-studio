@@ -438,9 +438,8 @@
   </div>
 </div>
 
-<!-- Gallery Data & JavaScript -->
 <script>
-  // Luxury 2.5 Lakh Level Service & Price Data Structure
+  // Luxury Service & Price Data Structure
   const categoryData = {
     nails: {
       title: "Nail Art & Extension Menu",
@@ -513,62 +512,64 @@
           badge: "Exclusive Care"
         }
       ]
-    }
-  };
-    
-    koreanSpa: {
-      title: " Korean Scalp Detox & Waterfall Spa",
-      images: [
-        { url: "./public/ab.jpeg" },
-        { url: "./public/ac.jpeg" },
-        { url: "./public/ad.jpeg" },
-        { url: "./public/ae.jpeg" },
-        { url: "./public/af.jpeg" },
-        { url: "./public/ag.jpeg" },
-      ]
-    },
-    hairTreatments: {
-      title: " Keratin, Hair Botox & Color Results",
-      images: [
-        { url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600", label: "Smooth Keratin Finish" },
-        { url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600", label: "Balayage Highlights" }
-      ]
-    },
-    skinCare: {
-      title: " Korean Glass Skin & Hydra Facial",
-      images: [
-        { url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600", label: "Glass Skin Glow Treatment" },
-        { url: "https://images.unsplash.com/photo-1512290900673-700200411789?w=600", label: "Hydra Facial Deep Cleansing" }
-      ]
-    }
-  };
+    }, // <-- Fixed: Yahan comma (,) aayega, semicolon (;) nahi
 
-function openCatGallery(categoryKey) {
+    koreanSpa: {
+      title: "Korean Scalp Detox & Waterfall Spa",
+      images: [
+        { url: "./public/ab.jpeg", name: "Korean Scalp Detox" },
+        { url: "./public/ac.jpeg", name: "Waterfall Head Spa" },
+        { url: "./public/ad.jpeg", name: "Scalp Nourishing Care" },
+        { url: "./public/ae.jpeg", name: "Deep Cleansing Therapy" },
+        { url: "./public/af.jpeg", name: "Aroma Head Spa" },
+        { url: "./public/ag.jpeg", name: "Relaxing Hair Spa" }
+      ]
+    },
+
+    hairTreatments: {
+      title: "Keratin, Hair Botox & Color Results",
+      images: [
+        { url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600", name: "Smooth Keratin Finish" },
+        { url: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600", name: "Balayage Highlights" }
+      ]
+    },
+
+    skinCare: {
+      title: "Korean Glass Skin & Hydra Facial",
+      images: [
+        { url: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600", name: "Glass Skin Glow Treatment" },
+        { url: "https://images.unsplash.com/photo-1512290900673-700200411789?w=600", name: "Hydra Facial Deep Cleansing" }
+      ]
+    }
+  }; // Object ends here
+
+  // Card Click Function - Modal Kholne Ke Liye
+  function openCatGallery(categoryKey) {
     const data = categoryData[categoryKey];
     if (!data) return;
 
-    // Set Title
+    // Set Header Title
     const titleElem = document.getElementById('catModalTitle');
     if (titleElem) titleElem.innerText = data.title;
 
-    // Populate Grid
+    // Grid Container Clear and Fill
     const grid = document.getElementById('catPopupGrid');
     if (grid) {
       grid.innerHTML = ''; 
 
       data.images.forEach(item => {
-        const imageUrl = typeof item === 'string' ? item : item.url;
-        const itemName = item.name || 'Nail Service';
-        const itemPrice = item.price || '';
-        const itemBadge = item.badge ? `<span class="absolute top-2 left-2 bg-black text-white text-[10px] font-bold px-2 py-1 rounded tracking-widest uppercase shadow">${item.badge}</span>` : '';
+        const imageUrl = item.url || item;
+        const itemName = item.name || item.label || 'Service';
+        const itemPrice = item.price ? `<p class="text-[#eb9cb0] font-bold text-lg my-1">${item.price}</p>` : '';
+        const itemBadge = item.badge ? `<span class="absolute top-2 left-2 bg-black text-white text-[10px] font-bold px-2 py-1 rounded tracking-widest uppercase shadow z-10">${item.badge}</span>` : '';
 
-        // Encoded WhatsApp text for booking
-        const waText = encodeURIComponent(`Hi Khushi, I would like to book an appointment for ${itemName} (${itemPrice}).`);
+        // Encoded WhatsApp Text
+        const waText = encodeURIComponent(`Hi Khushi, I would like to book an appointment for ${itemName}${item.price ? ' (' + item.price + ')' : ''}.`);
 
         grid.innerHTML += `
           <div class="group relative bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
             
-            <!-- Image Container -->
+            <!-- Image Area -->
             <div class="relative w-full h-48 sm:h-56 overflow-hidden bg-gray-50">
               <img src="${imageUrl}" alt="${itemName}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               ${itemBadge}
@@ -578,10 +579,10 @@ function openCatGallery(categoryKey) {
             <div class="p-4 flex flex-col justify-between flex-grow text-center">
               <div>
                 <h4 class="font-bold text-gray-800 text-sm md:text-base tracking-wide">${itemName}</h4>
-                <p class="text-[#eb9cb0] font-bold text-lg my-1">${itemPrice}</p>
+                ${itemPrice}
               </div>
               
-              <!-- Direct Booking CTA Button -->
+              <!-- Booking Button -->
               <a href="https://wa.me/919870085600?text=${waText}" target="_blank" 
                  class="mt-3 inline-block w-full py-2 bg-black hover:bg-[#eb9cb0] text-white font-semibold text-xs rounded transition-colors duration-200 uppercase tracking-widest">
                  Book Service
@@ -593,14 +594,21 @@ function openCatGallery(categoryKey) {
       });
     }
 
-    // Show Modal
+    // Modal ko Dikhana
     const modal = document.getElementById('catGalleryModal');
-    if (modal) modal.style.display = 'flex';
+    if (modal) {
+      modal.style.display = 'flex';
+      modal.classList.remove('hidden');
+    }
   }
 
+  // Modal Band Karne Ke Liye Function
   function closeCatGallery() {
     const modal = document.getElementById('catGalleryModal');
-    if (modal) modal.style.display = 'none';
+    if (modal) {
+      modal.style.display = 'none';
+      modal.classList.add('hidden');
+    }
   }
 </script>
             </div>
