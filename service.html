@@ -440,21 +440,82 @@
 
 <!-- Gallery Data & JavaScript -->
 <script>
+  // Luxury 2.5 Lakh Level Service & Price Data Structure
   const categoryData = {
     nails: {
-      title: " Nail Extensions & Art Collection",
+      title: "Nail Art & Extension Menu",
+      subtitle: "Handcrafted Luxury Nails & Protein Treatments",
       images: [
-        { url: "./public/a.jpeg" },
-        { url: "./public/b.jpeg"},
-        { url: "./public/c.jpeg"},
-        { url: "./public/e.jpeg" },       
-        { url: "./public/f.jpeg" },
-        { url: "./public/g.jpeg" },
-        { url: "./public/h.jpeg" },
-        { url: "./public/i.jpeg"},
-        { url: "./public/j.jpeg" },
-]
-    },
+        { 
+          url: "./public/a.jpeg", 
+          name: "Real Nail Gel Polish", 
+          price: "₹199/-",
+          badge: "Express"
+        },
+        { 
+          url: "./public/b.jpeg", 
+          name: "Real Nail Gel Polish & Art", 
+          price: "₹399/-",
+          badge: "Trending"
+        },
+        { 
+          url: "./public/c.jpeg", 
+          name: "Temporary Extensions & Gel Polish", 
+          price: "₹699/-",
+          badge: "Popular"
+        },
+        { 
+          url: "./public/e.jpeg", 
+          name: "Temporary Extensions & Art", 
+          price: "₹999/-",
+          badge: ""
+        },
+        { 
+          url: "./public/f.jpeg", 
+          name: "Temporary Extensions & Gel Art", 
+          price: "₹1,299/-",
+          badge: "Best Value"
+        },
+        { 
+          url: "./public/g.jpeg", 
+          name: "Gel Extensions & Gel Polish", 
+          price: "₹1,499/-",
+          badge: "Most Loved"
+        },
+        { 
+          url: "./public/h.jpeg", 
+          name: "Acrylic Extensions & Gel Polish", 
+          price: "₹1,599/-",
+          badge: "Durable"
+        },
+        { 
+          url: "./public/i.jpeg", 
+          name: "Gel Extensions & Art", 
+          price: "₹1,899/-",
+          badge: "Luxury Art"
+        },
+        { 
+          url: "./public/j.jpeg", 
+          name: "Acrylic Extensions & Art", 
+          price: "₹1,999/-",
+          badge: "Signature"
+        },
+        { 
+          url: "./public/a.jpeg", 
+          name: "Acrylic Extensions & Acrylic Art", 
+          price: "₹2,399/-",
+          badge: "Masterpiece"
+        },
+        { 
+          url: "./public/b.jpeg", 
+          name: "Hair & Nail Protein Treatment", 
+          price: "₹5,000/-",
+          badge: "Exclusive Care"
+        }
+      ]
+    }
+  };
+    
     koreanSpa: {
       title: " Korean Scalp Detox & Waterfall Spa",
       images: [
@@ -482,41 +543,67 @@
     }
   };
 
-function openCatGallery(category) {
-  const data = categoryData[category];
-  if (!data) return;
+function openCatGallery(categoryKey) {
+    const data = categoryData[categoryKey];
+    if (!data) return;
 
-  document.getElementById('catModalTitle').innerText = data.title;
-  const grid = document.getElementById('catPopupGrid');
-  grid.innerHTML = '';
+    // Set Title
+    const titleElem = document.getElementById('catModalTitle');
+    if (titleElem) titleElem.innerText = data.title;
 
-  data.images.forEach(item => {
-    // Agar item sirf string URL hai ya object hai, dono handle karega
-    const imageUrl = typeof item === 'string' ? item : item.url;
-    
-    grid.innerHTML += `
-      <div class="cat-popup-item">
-        <img src="${imageUrl}" alt="Gallery Image">
-      </div>
-    `;
-  });
+    // Populate Grid
+    const grid = document.getElementById('catPopupGrid');
+    if (grid) {
+      grid.innerHTML = ''; 
 
-  document.getElementById('catGalleryModal').style.display = 'flex';
-}
-  function closeCatGallery() {
-    document.getElementById('catGalleryModal').style.display = 'none';
+      data.images.forEach(item => {
+        const imageUrl = typeof item === 'string' ? item : item.url;
+        const itemName = item.name || 'Nail Service';
+        const itemPrice = item.price || '';
+        const itemBadge = item.badge ? `<span class="absolute top-2 left-2 bg-black text-white text-[10px] font-bold px-2 py-1 rounded tracking-widest uppercase shadow">${item.badge}</span>` : '';
+
+        // Encoded WhatsApp text for booking
+        const waText = encodeURIComponent(`Hi Khushi, I would like to book an appointment for ${itemName} (${itemPrice}).`);
+
+        grid.innerHTML += `
+          <div class="group relative bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            
+            <!-- Image Container -->
+            <div class="relative w-full h-48 sm:h-56 overflow-hidden bg-gray-50">
+              <img src="${imageUrl}" alt="${itemName}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              ${itemBadge}
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-4 flex flex-col justify-between flex-grow text-center">
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm md:text-base tracking-wide">${itemName}</h4>
+                <p class="text-[#eb9cb0] font-bold text-lg my-1">${itemPrice}</p>
+              </div>
+              
+              <!-- Direct Booking CTA Button -->
+              <a href="https://wa.me/919870085600?text=${waText}" target="_blank" 
+                 class="mt-3 inline-block w-full py-2 bg-black hover:bg-[#eb9cb0] text-white font-semibold text-xs rounded transition-colors duration-200 uppercase tracking-widest">
+                 Book Service
+              </a>
+            </div>
+
+          </div>
+        `;
+      });
+    }
+
+    // Show Modal
+    const modal = document.getElementById('catGalleryModal');
+    if (modal) modal.style.display = 'flex';
   }
 
-  // Close when clicking outside content box
-  window.addEventListener('click', function(e) {
+  function closeCatGallery() {
     const modal = document.getElementById('catGalleryModal');
-    if (e.target === modal) {
-      closeCatGallery();
-    }
-  });
+    if (modal) modal.style.display = 'none';
+  }
 </script>
-
-                </div>
+            </div>
 
             </div>
 
